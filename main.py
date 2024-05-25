@@ -34,7 +34,7 @@ class EnovaApp:
             service_response = requests.post(service_url, headers=service_headers, json=service_payload)
             service_response.raise_for_status()
             data = service_response.json()
-            print(f"Wynik: {data}")
+            print(data)
             
             if data == "Komunikacja z WebAPI enova działa!":
                 display_message = "Connected"

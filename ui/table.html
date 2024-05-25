@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enova365 UI - WebApp created in Python</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript">
+        eel.expose(update_output);
+        function update_output(data) {
+            document.getElementById("output").innerHTML = data;
+        }
+
+        function exitApp() {
+            eel.close_app();
+        }
+    </script>
+</head>
+<body>
+    <h1>Enova Kontrahenci</h1>
+    <div id="output">Ładowanie danych...</div>
+    <button onclick="exitApp()">Exit</button>
+</body>
+</html>
