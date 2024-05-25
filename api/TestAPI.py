@@ -18,9 +18,6 @@ class EnovaApp:
             response.raise_for_status()
             login_data = response.json()
             session_token = login_data.get('Token')
-            print(f"Response: {response}")
-            print(f"Login Data: {login_data}")
-            print(f"Session Token: {session_token}")
 
             if not session_token:
                 raise ValueError("Nie udało się uzyskać tokenu sesji")
