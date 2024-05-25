@@ -33,7 +33,7 @@ class EnovaApp:
             service_response = requests.post(service_url, headers=service_headers, params=params)
             service_response.raise_for_status()
             data = service_response.json()
-            print(f"{data}")
+            print(f"Wynik: {data}")
         except requests.exceptions.RequestException as e:
             print(f"Błąd podczas komunikacji z API: {e}")
         except ValueError as ve:

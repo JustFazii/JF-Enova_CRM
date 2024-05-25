@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -9,9 +10,14 @@
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="./js/output.js"></script>
+    <script type="text/javascript">
+        eel.expose(update_output);
+        function update_output(data) {
+            document.getElementById("output").innerHTML = data;
+        }
+    </script>
 </head>
 <body>
-
     <div class="container">
         <div class="sidebar active">
             <div class="menu-btn">
@@ -74,10 +80,10 @@
                 <p class="title">Control Panel</p>
                 <ul>
                     <li>
-                        <a href="#">
+                        <!-- <a href="#">
                             <i class="icon ph ph-webhooks-logo"></i>
                             <span class="text" id="output"></span>
-                        </a>
+                        </a> -->
                     </li>
                     <li>
                         <a href="#">
@@ -114,7 +120,8 @@
                 </a>
             </div>
             <div class="main-window-content">
-                <p class="text">Dashboard</p>
+                <h1>Contractors</h1>
+                <div id="output"></div>
             </div>
         </div>
     </div>
