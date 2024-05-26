@@ -300,33 +300,6 @@ body {
     flex-direction: column;
 }
 
-.main-table {
-    display: flex;
-    width: 100%;
-    margin-top:10px;
-    overflow-y:scroll;
-    overflow:scroll;
-    overflow-x:hidden;
-    table-layout: fixed;
-}
-
-.tr-main {
-    background-color: #5b6677;
-    text-align: center;
-    
-}
-
-.tbd-main {
-    margin-bottom: 100px;
-}
-
-.contractors-table {
-    border: 1 solid #757575;
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-}
-
 .func-name {
     padding-left: 10px;
     font-size: 20px;
@@ -345,119 +318,27 @@ body {
     color: #757575;
 }
 
-.get-echo-content {
+.main-table {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.get-echo-box{
-    margin-top: 10px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 10px 20px 10px;
-    border-radius: 15px;
-}
-
-.input-box {
-    margin-top: 15px;
-    width: 250px;
-    height: 30px;
-    font-size: 15px;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-
-.submit-btn {
-    display: flex;
-    gap: 10px;
-    width: 100px;
-    background-color: #f6f6f6;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 7px 40px 7px 40px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #757575;
-    transition: all 0.3s;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.submit-btn:hover {
-    color: #000;
-}
-
-.submit-btn .icon {
-    font-size: 20px;
-}
-
-.get-echo-response {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.response-text {
-    font-size: 15px;
-}
-
-.response-text .icon {
-    font-size: 20px;
-}
-
-.callback-text {
-    margin-top: 10px;
-    font-size: 15px;
-}
-
-.navbar-get-echo {
-    background-color: var(--primary-color);
     width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    border-radius: 10px;
-    text-align: right;
-    font-weight: 500;
-    margin-right: 10px;
+    margin-top:15px;
+    overflow-y:scroll;
+    overflow:scroll;
+    overflow-x:hidden;
+    table-layout: fixed;
 }
 
-.navbar-get-echo a {
-    text-decoration: none;
-    color: #757575;
-    font-size: 15px;
-    margin-right: 1%;
-    width: 250px;
+.table-content {
+    margin-left: 5px;
+    margin-right: 5px;
     text-align: center;
-    align-items: center;
-    justify-content: right;
-    gap: 10px;
-    transition: all 0.3s;
+    background-color:#eee;
+    border-collapse:collapse;
 }
-
-.navbar-get-echo a:hover {
-    color: #000;
+.table-content th { 
+    background-color:#757575;
+    color:white;
 }
-
-.navbar-get-echo .icon {
-    font-size: 20px;
-}
-
-.not-available {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.table-content td, .table-content th { 
+    border:1px solid #000;
 }

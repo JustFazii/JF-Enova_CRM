@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="icon" type="image/x-icon" href="/img/enova-logo.ico" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/contractors.css" />
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="./js/output.js"></script>
@@ -38,33 +38,20 @@
               </li>
               <li>
                 <a href="contractors.html">
-                  <i class="icon ph ph-address-book"></i>
+                  <i class="icon ph-bold ph-address-book"></i>
                   <span class="text">Contractors</span>
-                  <i class="arrow ph-bold ph-caret-down"></i>
                 </a>
-                <!-- <ul class="sub-menu">
-                                <li>
-                                    <a href="#">
-                                        <span class="text">Users</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="text">Users2</span>
-                                    </a>
-                                </li>
-                            </ul> -->
+              </li>
+              <li>
+                <a href="invoices.html">
+                  <i class="icon ph-bold ph-invoice"></i>
+                  <span class="text">Invoices</span>
+                </a>
               </li>
               <li>
                 <a href="getecho.html">
                   <i class="icon ph-bold ph ph-target"></i>
                   <span class="text">Send Echo</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="icon ph-bold ph-house-simple"></i>
-                  <span class="text">Dashboard</span>
                 </a>
               </li>
             </ul>
@@ -106,7 +93,196 @@
           </a>
         </div>
         <div class="main-window-content-contractors">
-          <div id="output2"></div>
+          <div class="func-name">
+            <i class="icon ph-bold ph ph-target"></i>
+            <span>Contractors</span>
+          </div>
+          <div class="func-description">
+            <p>
+              This service is used to manage all available contractors in
+              database. Here you will have all available contractors.<br />
+              You can edit their data or add a new one.
+            </p>
+          </div>
+          <div class="main-table">
+           <table class="table-content">
+              <tbody>
+                <tr>
+                  <th>ID</th>
+                  <th>Kod</th>
+                  <th>Nazwa</th>
+                  <th>Adres</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>!INCYDENTALNY</td>
+                  <td>!INCYDENTALNY</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>71</td>
+                  <td>00001</td>
+                  <td>Kontrahent01</td>
+                  <td>ul. Ulica01 1/1 01-011 Leszno</td>
+                </tr>
+                <tr>
+                  <td>72</td>
+                  <td>00002</td>
+                  <td>Kontrahent02</td>
+                  <td>ul. Ulica02 2/2 22-222 Leszno</td>
+                </tr>
+                <tr>
+                  <td>73</td>
+                  <td>00003</td>
+                  <td>Kontrahent03</td>
+                  <td>ul. Ulica03 3/3 33-333 Leszno</td>
+                </tr>
+                <tr>
+                  <td>74</td>
+                  <td>00004</td>
+                  <td>Kontrahent04</td>
+                  <td>ul. Ulica04 4/4 44-444 Leszno</td>
+                </tr>
+                <tr>
+                  <td>75</td>
+                  <td>00005</td>
+                  <td>Kontrahent05</td>
+                  <td>ul. Ulica05 5/5 55-555 Leszno</td>
+                </tr>
+                <tr>
+                  <td>76</td>
+                  <td>00006</td>
+                  <td>Kontrahent06</td>
+                  <td>ul. Ulica06 6/6 66-666 Leszno</td>
+                </tr>
+                <tr>
+                  <td>77</td>
+                  <td>00007</td>
+                  <td>Kontrahent07</td>
+                  <td>ul. Ulica07 7/7 77-777 Leszno</td>
+                </tr>
+                <tr>
+                  <td>78</td>
+                  <td>00008</td>
+                  <td>Kontrahent08</td>
+                  <td>ul. Ulica08 8/8 88-888 Poznań</td>
+                </tr>
+                <tr>
+                  <td>79</td>
+                  <td>00009</td>
+                  <td>Kontrahent09</td>
+                  <td>ul. Ulica09 9/9 99-999 Wrocław</td>
+                </tr>
+                <tr>
+                  <td>80</td>
+                  <td>00010</td>
+                  <td>Kontrahent10</td>
+                  <td>ul. Ulica10 10/10 10-101 Warszawa</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Abc</td>
+                  <td>ABC Sp. z o.o</td>
+                  <td>ul. Nowa 1 30-140 Kraków</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Aspen</td>
+                  <td>ASPEN GmbH</td>
+                  <td>Berliner Strasse 3 45127 Essen, Niemcy</td>
+                </tr>
+                <tr>
+                  <td>81</td>
+                  <td>Bcd</td>
+                  <td>Bcd Sp. Z o.o</td>
+                  <td>ul. Mickiewicza 1/1 64-100 Leszno</td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td>Blanc</td>
+                  <td>Michel Blanc S.A.R.L</td>
+                  <td>Avenue de Champs Elysees 22 75008 Paris, Francja</td>
+                </tr>
+                <tr>
+                  <td>82</td>
+                  <td>Cde</td>
+                  <td>Cde Sp. Z o.o</td>
+                  <td>ul. Mickiewicza 2/1 64-100 Leszno</td>
+                </tr>
+                <tr>
+                  <td>83</td>
+                  <td>Def</td>
+                  <td>Def Sp. Z o.o</td>
+                  <td>ul. Mickiewicza 3/1 64-100 Leszno</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Drynda</td>
+                  <td>Warsztat Samochodowy DRYNDA Wiesław Goluch</td>
+                  <td>ul. Krakowska 54 34-962 Jarocin</td>
+                </tr>
+                <tr>
+                  <td>84</td>
+                  <td>Efg</td>
+                  <td>Efg Sp. Z o.o</td>
+                  <td>ul. Mickiewicza 4/1 64-100 Leszno</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>EnergoEko</td>
+                  <td>EnergoEko - Fabryka Energii Ekologicznej</td>
+                  <td>ul. Przemysłowa 3 31-528 Dzierżoniów</td>
+                </tr>
+                <tr>
+                  <td>85</td>
+                  <td>Fgh</td>
+                  <td>Fgh Sp. Z o.o</td>
+                  <td>ul. Mickiewicza 5/2 64-100 Leszno</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Fiszbin</td>
+                  <td>FISZBIN - Sklep zoologiczny Joanna Mazowiecka</td>
+                  <td>ul. Legionów Polskich 67/32 76-987 Szczecin</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Full Garden</td>
+                  <td>
+                    Full Garden - Wszystko do ogrodu Jacek Cłapek, Witold
+                    Generalny
+                  </td>
+                  <td>ul. Mostowa 7 41-865 Bydgoszcz</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Gawron</td>
+                  <td>Sklep spożywczy - Łukasz Gawron</td>
+                  <td>ul. Przybynów 123 Przybynów</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Hiacynt</td>
+                  <td>Kwiaciarnia HIACYNT Teresa Smuga</td>
+                  <td>ul. Jesienna 34/2 13-543 Łódź</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Hiacynt</td>
+                  <td>Kwiaciarnia HIACYNT Teresa Smuga</td>
+                  <td>ul. Jesienna 34/2 13-543 Łódź</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Hiacynt</td>
+                  <td>Kwiaciarnia HIACYNT Teresa Smuga</td>
+                  <td>ul. Jesienna 34/2 13-543 Łódź</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <div id="output2"></div> -->
+          </div>
+          
         </div>
       </div>
     </div>

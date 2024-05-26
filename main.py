@@ -58,7 +58,7 @@ class EnovaApp:
              eel.update_status(f"Błąd: {ve}")
         
     def format_data(self, data):
-        html = "<table class='table' border='1'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>Adres</th></tr>"
+        html = "<table class='table-content'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>Adres</th></tr>"
         for item in data:
             html += f"<tr><td>{item['ID']}</td><td>{item['Kod']}</td><td>{item['Nazwa']}</td><td>{item['Adres']}</td></tr>"
         html += "</table>"
