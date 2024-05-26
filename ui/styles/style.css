@@ -214,7 +214,7 @@ body {
     width: 100%;
     background-color: var(--primary-color);
     border-radius: 25px;
-    margin: 0 10 0 10;
+    margin: 0px 10px 0px 10px;
     display: flex;
     flex-direction: column;
 }
@@ -236,7 +236,12 @@ body {
     text-decoration: none;
     color: black;
     font-size: 15px;
-    margin-right: 15px;
+    margin-right: 45px;
+    width: 75px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 
 .main-window-content {
@@ -246,5 +251,33 @@ body {
     max-height: 90vh;
     height: 100%;
     border-radius: 10px;
-    background-color: blue;
+    display: flex;
+}
+
+.main-window-content-contractors {
+    overflow-y:scroll;
+    overflow:scroll;
+    overflow-x:hidden;
+    max-height: 90vh;
+    height: 100%;
+    display: flex;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.tr-main {
+    background-color: #5b6677;
+    text-align: center;
+    
+}
+
+.tbd-main {
+    margin-bottom: 100px;
+}
+
+.contractors-table {
+    border: 1 solid #757575;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
 }

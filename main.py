@@ -1,6 +1,6 @@
-import sys
 import requests
 import eel
+from tabulate import tabulate
 
 class EnovaApp:
     def __init__(self):
@@ -9,6 +9,7 @@ class EnovaApp:
     def send_request(self, param):
         login_url = "http://192.168.0.23:6001/api/LoginApi"
         service_url = "http://192.168.0.23:6001/api/ServiceImpApiANS/TestApi"
+        service_url2 = "http://192.168.0.23:6001/api/ServiceImpApiANS/GetKontrahenci"
 
         headers = {
             'Authorization': f'Bearer {self.base_token}',
@@ -33,25 +34,44 @@ class EnovaApp:
             }
             service_response = requests.post(service_url, headers=service_headers, json=service_payload)
             service_response.raise_for_status()
+            
+            service_response2 = requests.post(service_url2, headers=service_headers, json=service_payload)
+            service_response2.raise_for_status()
+            
             data = service_response.json()
-            print(data)
+            
+            data2 = service_response2.json()
             
             if data == "Komunikacja z WebAPI enova działa!":
                 display_message = "Connected"
             else:
                 display_message = data
                 
-            eel.update_output(display_message)
+            eel.update_status(display_message)
+            html_table = self.format_data(data2)
+            eel.update_output2(html_table)
         except requests.exceptions.RequestException as e:
-            print(f"Błąd podczas komunikacji z API: {e}")
-            eel.update_output(f"Błąd podczas komunikacji z API: {e}")
+             print(f"Błąd podczas komunikacji z API: {e}")
+             eel.update_status(f"Błąd podczas komunikacji z API: {e}")
         except ValueError as ve:
-            print(f"Błąd: {ve}")
-            eel.update_output(f"Błąd: {ve}")
+             print(f"Błąd: {ve}")
+             eel.update_status(f"Błąd: {ve}")
+        
+    def format_data(self, data):
+        html = "<table class='table' border='1'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>Adres</th></tr>"
+        for item in data:
+            html += f"<tr><td>{item['ID']}</td><td>{item['Kod']}</td><td>{item['Nazwa']}</td><td>{item['Adres']}</td></tr>"
+        html += "</table>"
+        return html
+
+@eel.expose
+def refresh_contractors():
+    app.send_request("")
+    return "Done"  # Ensure a value is returned
 
 if __name__ == "__main__":
     eel.init('ui')
     app = EnovaApp()
-    param = ""
-    app.send_request(param)
     eel.start('index.html')
+    while True:
+        eel.sleep(1)
