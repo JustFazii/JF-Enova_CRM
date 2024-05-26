@@ -59,15 +59,27 @@ class EnovaApp:
         
     def format_data(self, data):
         html = "<table class='table-content'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>Adres</th></tr>"
-        for item in data:
-            html += f"<tr><td>{item['ID']}</td><td>{item['Kod']}</td><td>{item['Nazwa']}</td><td>{item['Adres']}</td></tr>"
+        for index, item in enumerate(data):
+            if index % 2 < 1:
+                cls = 'td-first'
+            else:
+                cls = 'td-second'
+                
+            html += (
+                f"<tr>"
+                f"<td class='{cls}'>{item['ID']}</td>"
+                f"<td class='{cls}'>{item['Kod']}</td>"
+                f"<td class='{cls}'>{item['Nazwa']}</td>"
+                f"<td class='{cls}'>{item['Adres']}</td>"
+                f"</tr>"
+            )
         html += "</table>"
         return html
 
 @eel.expose
 def refresh_contractors():
     app.send_request("")
-    return "Done"  # Ensure a value is returned
+    return "Done"
 
 if __name__ == "__main__":
     eel.init('ui')

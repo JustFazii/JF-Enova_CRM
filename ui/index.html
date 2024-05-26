@@ -1,124 +1,100 @@
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="icon" type="image/x-icon" href="/img/enova-logo.ico">
+    <link rel="icon" type="image/x-icon" href="/img/enova-logo.ico" />
     <link rel="stylesheet" href="styles/index.css" />
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="./js/output.js"></script>
-</head>
-<body>
-
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark-theme");
+      }
+  </script>
+  </head>
+  <body>
     <div class="container">
-        <div class="sidebar active">
-            <div class="menu-btn">
-                <i class="ph-bold ph-caret-left"></i>
-            </div>
-            <div class="head">
-                <div class="service-img">
-                    <img src="img/enova-logo.png" alt="enova-logo">
-                </div>
-                <div class="service-details">
-                    <p class="title">Enova Python App</p>
-                    <p class="subtitle">Mikołaj Trawkowski</p>
-                </div>
-            </div>
-            <div class="nav">
-                <div class="menu">
-                    <p class="title">Main Menu</p>
-                    <ul>
-                        <li class="active">
-                            <a href="index.html">
-                                <i class="icon ph-bold ph-house-simple"></i>
-                                <span class="text">Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contractors.html">
-                                <i class="icon ph-bold ph-address-book"></i>
-                                <span class="text">Contractors</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="invoices.html">
-                                <i class="icon ph-bold ph-invoice"></i>
-                                <span class="text">Invoices</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="getecho.html">
-                                <i class="icon ph-bold ph ph-target"></i>
-                                <span class="text">Send Echo</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="menu">
-                <p class="title">Control Panel</p>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="icon ph ph-webhooks-logo"></i>
-                            <span class="text" id="status"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="icon ph ph-wrench"></i>
-                            <span class="text">Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="exitApp()">
-                            <i class="icon ph ph-sign-out"></i>
-                            <span class="text">Exit</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="sidebar active">
+        <div class="menu-btn">
+          <i class="ph-bold ph-caret-left"></i>
         </div>
-        <div class="main-window">
-            <div class="navbar">
-                <a href="#">
-                    <i class="icon ph ph-wrench"></i>
-                    <span class="text">Settings</span>
-                </a>
-                <a href="#">
-                    <i class="icon ph ph-wrench"></i>
-                    <span class="text">Settings</span>
-                </a>
-                <a href="#">
-                    <i class="icon ph ph-wrench"></i>
-                    <span class="text">Settings</span>
-                </a>
-                <a href="#">
-                    <i class="icon ph ph-wrench"></i>
-                    <span class="text">Settings</span>
-                </a>
-            </div>
-            <div class="">
-                    <a href="#" class="">
-                        <i class="ph ph-wrench"></i>
-                        <span class="text">Settings</span>
-                    </a>
-                    <a href="#" class="">
-                        <i class="ph ph-wrench"></i>
-                        <span class="text">Settings</span>
-                    </a>
-                    <a href="#" class="">
-                        <i class="ph ph-wrench"></i>
-                        <span class="text">Settings</span>
-                    </a>
-            </div>
+        <div class="head">
+          <div class="service-img">
+            <img src="img/enova-logo.png" alt="enova-logo" />
+          </div>
+          <div class="service-details">
+            <p class="title">Enova Python App</p>
+            <p class="subtitle">Mikołaj Trawkowski</p>
+          </div>
         </div>
-    </div>
+        <div class="nav">
+          <div class="menu">
+            <p class="title">Main Menu</p>
+            <ul>
+              <li class="active">
+                <a href="index.html">
+                  <i class="icon ph-bold ph-house-simple"></i>
+                  <span class="text">Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="contractors.html">
+                  <i class="icon ph-bold ph-address-book"></i>
+                  <span class="text">Contractors</span>
+                </a>
+              </li>
+              <li>
+                <a href="invoices.html">
+                  <i class="icon ph-bold ph-invoice"></i>
+                  <span class="text">Invoices</span>
+                </a>
+              </li>
+              <li>
+                <a href="getecho.html">
+                  <i class="icon ph-bold ph ph-target"></i>
+                  <span class="text">Send Echo</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu">
+          <p class="title">Control Panel</p>
+          <ul>
+            <li>
+              <a style="cursor: pointer;">
+                <i class="icon ph-bold ph-webhooks-logo"></i>
+                <span class="text" id="status"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="theme" style="cursor: pointer;">
+                <i class="icon ph-bold ph-paint-roller"></i>
+                <span class="text">Change Theme</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" onclick="exitApp()">
+                <i class="icon ph-bold ph-sign-out"></i>
+                <span class="text">Exit</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-window">
+      </div>
 
     <!--Jquery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/script.js"></script>
-</body>
+    <script src="js/theme-save.js"></script>
+  </body>
 </html>
