@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// document.addEventListener("contextmenu", (event) => event.preventDefault());
+document.addEventListener("contextmenu", (event) => event.preventDefault());
 
 if (localStorage.getItem("theme") === "dark") {
   document.documentElement.classList.add("dark-theme");
