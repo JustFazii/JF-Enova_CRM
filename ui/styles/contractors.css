@@ -9,6 +9,9 @@
   --text-color3: #fff;
   --text-hover-color: #000;
   --button-color: #757575;
+  --table-color: #fff;
+  --table-second-color: #bababa;
+  --table-hover-color: #a1a1a1;
 }
 
 .dark-theme {
@@ -20,6 +23,9 @@
   --text-color3: #ffffff;
   --text-hover-color: #000000;
   --button-color: #757575;
+  --table-color: #5c5c5c;
+  --table-second-color: #696969;
+  --table-hover-color: #808080;
 }
 
 * {
@@ -288,7 +294,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #000;
+  color: var(--text-color2);
 }
 
 .navbar .icon {
@@ -369,14 +375,14 @@ body {
 }
 
 .table-content td:hover {
-  background-color: #a1a1a1;
+  background-color: var(--table-hover-color);
   cursor: pointer;
 }
 
 tr .td-first {
-  background-color: white;
+  background-color: var(--table-color);
 }
 
 tr .td-second {
-  background-color: #bababa;
+  background-color: var(--table-second-color);
 }

@@ -1,5 +1,3 @@
-import os
-import eel
 import requests
 
 class GetEcho:

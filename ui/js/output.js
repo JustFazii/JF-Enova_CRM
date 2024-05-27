@@ -1,7 +1,11 @@
-eel.expose(update_status);
-function update_status(data) {
-  document.getElementById("status").innerText = data;
+document.addEventListener("DOMContentLoaded", function() {
+  eel.update_status()(function(data) {
+      document.getElementById("status").innerText = data;
+  }).catch(function(error) {
+      console.error(`Error calling update_status: ${error}`);
+  });
 }
+);
 
 eel.expose(update_output2);
 function update_output2(data) {
@@ -14,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("contextmenu", (event) => event.preventDefault());
+// document.addEventListener("contextmenu", (event) => event.preventDefault());
 
 if (localStorage.getItem("theme") === "dark") {
   document.documentElement.classList.add("dark-theme");
