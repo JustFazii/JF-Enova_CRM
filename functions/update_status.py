@@ -20,7 +20,7 @@ class UpdateStatus:
             session_token = login_data.get('Token')
 
             if not session_token:
-                raise ValueError("Nie udało się uzyskać tokenu sesji")
+                raise ValueError("Unable to access Session Token")
 
             service_headers = {
                 'Authorization': f'Bearer {session_token}',
@@ -37,12 +37,18 @@ class UpdateStatus:
             if data == "Komunikacja z WebAPI enova działa!":
                 display_message = "Connected"
             else:
-                display_message = data
+                display_message = "Disconnected"
             
-            update_status = display_message
-            
-            return update_status
+            return display_message
+        
+        except requests.exceptions.HTTPError as http_err:
+            if http_err.response.status_code == 401:
+                print(f"Błąd 401: Unauthorized - {http_err}")
+                return "Disconnected - Unauthorized"
         except requests.exceptions.RequestException as e:
-             print(f"Błąd podczas komunikacji z API: {e}")
+             print(f"Error while communicating with API: {e}")
+             api = "API Error"
+             return api
         except ValueError as ve:
-             print(f"Błąd: {ve}")
+             api = f"Error: {ve}"
+             return api

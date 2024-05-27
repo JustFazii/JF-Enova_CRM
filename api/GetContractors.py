@@ -42,8 +42,8 @@ class EnovaApp:
     def format_data(self, data):
         table = []
         for item in data:
-            table.append([item['ID'], item['Kod'], item['Nazwa'], item['Adres']])
-        return tabulate(table, headers=["ID", "Kod", "Nazwa", "Adres"], tablefmt="grid")
+            table.append([item['ID'], item['Kod'], item['Nazwa'], item['NIP'], item['Adres']])
+        return tabulate(table, headers=["ID", "Kod", "Nazwa", "NIP", "Adres"], tablefmt="grid")
 
 if __name__ == "__main__":
     app = EnovaApp()

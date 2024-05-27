@@ -24,7 +24,7 @@ class EnovaApp:
             session_token = login_data.get('Token')
 
             if not session_token:
-                raise ValueError("Nie udało się uzyskać tokenu sesji")
+                raise ValueError("Unable to access Session Token")
 
             service_headers = {
                 'Authorization': f'Bearer {session_token}',
@@ -44,14 +44,14 @@ class EnovaApp:
             html_table = self.format_data(data2)
             eel.update_output2(html_table)
         except requests.exceptions.RequestException as e:
-             print(f"Błąd podczas komunikacji z API: {e}")
-             eel.update_status(f"Błąd podczas komunikacji z API: {e}")
+             print(f"Error while communicating with API: {e}")
+             eel.update_status(f"API Error")
         except ValueError as ve:
-             print(f"Błąd: {ve}")
-             eel.update_status(f"Błąd: {ve}")
+             print(f"Error: {ve}")
+             eel.update_status(f"Error: {ve}")
         
     def format_data(self, data):
-        html = "<table class='table-content'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>Adres</th></tr>"
+        html = "<table class='table-content'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>NIP</th><th>Adres</th></tr>"
         for index, item in enumerate(data):
             if index % 2 < 1:
                 cls = 'td-first'
@@ -63,6 +63,7 @@ class EnovaApp:
                 f"<td class='{cls}'>{item['ID']}</td>"
                 f"<td class='{cls}'>{item['Kod']}</td>"
                 f"<td class='{cls}'>{item['Nazwa']}</td>"
+                f"<td class='{cls}'>{item['NIP']}</td>"
                 f"<td class='{cls}'>{item['Adres']}</td>"
                 f"</tr>"
             )
