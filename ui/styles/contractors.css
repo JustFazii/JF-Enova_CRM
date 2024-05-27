@@ -313,11 +313,12 @@ body {
 }
 
 .func-name {
+  color: var(--text-color);
   padding-left: 10px;
   font-size: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--button-color);
 }
 
 .func-name .icon {

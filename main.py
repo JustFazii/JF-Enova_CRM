@@ -1,6 +1,6 @@
 import requests
 import eel
-from tabulate import tabulate
+from functions.get_echo import GetEcho
 
 class EnovaApp:
     def __init__(self):
@@ -10,6 +10,7 @@ class EnovaApp:
         login_url = "http://192.168.0.23:6001/api/LoginApi"
         service_url = "http://192.168.0.23:6001/api/ServiceImpApiANS/TestApi"
         service_url2 = "http://192.168.0.23:6001/api/ServiceImpApiANS/GetKontrahenci"
+        service_url3 = "http://192.168.0.23:6001/api/ServiceImpApiANS/GetEcho"
 
         headers = {
             'Authorization': f'Bearer {self.base_token}',
@@ -75,6 +76,13 @@ class EnovaApp:
             )
         html += "</table>"
         return html
+    
+@eel.expose
+def send_request(param):
+    print(param)
+    app = GetEcho()
+    result = app.send_request(param)
+    return result
 
 @eel.expose
 def refresh_contractors():
