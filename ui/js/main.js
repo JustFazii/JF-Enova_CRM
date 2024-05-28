@@ -5,13 +5,12 @@ let mainWindow;
 
 function createWindow() {
   const iconPath = 'C:/Users/JustFazii/Desktop/JF-Enova_Electron/ui/img/enova-logo.ico';
-  console.log('Icon path:', iconPath);
 
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    minWidth: 800,
-    minHeight: 600,
+    width: 1000,
+    height: 800,
+    minWidth: 850,
+    minHeight: 650,
     frame: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),

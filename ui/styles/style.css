@@ -476,7 +476,7 @@ body {
 }
 
 .submit-btn:hover {
-  color: #000;
+  color: var(--text-color2);
 }
 
 .submit-btn .icon {
@@ -530,7 +530,7 @@ body {
 }
 
 .navbar-get-echo a:hover {
-  color: #000;
+  color: var(--text-color2);
 }
 
 .navbar-get-echo .icon {
