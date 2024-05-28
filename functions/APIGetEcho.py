@@ -36,7 +36,7 @@ class APIGetEcho:
             print(service_response)
             print(service_url)
             print(data)
-            return data  # Zwraca echo do JavaScript
+            return data
         except requests.exceptions.RequestException as e:
             return f"Błąd podczas komunikacji z API: {e}"
         except ValueError as ve:
