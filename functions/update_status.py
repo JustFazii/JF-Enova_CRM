@@ -40,6 +40,7 @@ class UpdateStatus:
                 display_message = "Disconnected"
             
             return display_message
+            
         
         except requests.exceptions.HTTPError as http_err:
             if http_err.response.status_code == 401:

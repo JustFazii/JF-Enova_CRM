@@ -1,12 +1,12 @@
-import requests
 import eel
+import requests
 from functions.get_echo import GetEcho
 from functions.update_status import UpdateStatus
 
 class EnovaApp:
     def __init__(self):
         self.base_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdGgtbXRoIjoiMTAyNCIsImF0aC1wd3QiOiIxIiwiYXRoLWRiIjoiSU5GXzIyNDMyIiwiYXRoLWd1aWQiOiIzNmQ1NGRmYy04N2YyLTQ5YWEtYTRiMi1kM2FjZDhiZTY5YzYiLCJhdGgtc3ZjIjoiQXBpIiwibmJmIjoxNzE2NTU2NzY3LCJleHAiOjE3NDgwOTI3NjcsImlhdCI6MTcxNjU1Njc2NywiaXNzIjoiaHR0cHM6Ly93d3cuZW5vdmEucGwiLCJhdWQiOiJlbm92YTM2NSJ9.k4SbzPbPheoNn7CajBhWj0CzECeb5HzIEvSzahyeC3TaPiIcdxbnlijKZp2loe6JXu1z62V2pS4erLMpOBUUFrSnbet36iZpcXWGbL69VI3GCSHnwRcD1ssMYMxp6pKTZf0OdRfKlfyFeI4ntZdzh2vs7aBFhaHE0m5Wv3EpH3Biv9dVMACu6ayAthg4Of6vSMRfr7T_MZDN35aCYMsWordxlWUJwJ5K3YrpjfLAQXNLEsjfkv1dcqHY3NZtj2c1Z84PApRpIeo1kjJLvV5-7UIt7xX1cPMuC3omZfhEmUAuYe31YMHiLhb7QThx9Zcd33Tq0fYWPLe-pzVLelrthg"
-    
+
     def send_request(self, param):
         login_url = "http://192.168.0.23:6001/api/LoginApi"
         service_url = "http://192.168.0.23:6001/api/ServiceImpApiANS/TestApi"
@@ -44,20 +44,16 @@ class EnovaApp:
             html_table = self.format_data(data2)
             eel.update_output2(html_table)
         except requests.exceptions.RequestException as e:
-             print(f"Error while communicating with API: {e}")
-             eel.update_status(f"API Error")
+            print(f"Error while communicating with API: {e}")
+            eel.update_status(f"API Error: {e}")
         except ValueError as ve:
-             print(f"Error: {ve}")
-             eel.update_status(f"Error: {ve}")
+            print(f"Error: {ve}")
+            eel.update_status(f"Error: {ve}")
         
     def format_data(self, data):
         html = "<table class='table-content'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>NIP</th><th>Adres</th></tr>"
         for index, item in enumerate(data):
-            if index % 2 < 1:
-                cls = 'td-first'
-            else:
-                cls = 'td-second'
-                
+            cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
                 f"<tr>"
                 f"<td class='{cls}'>{item['ID']}</td>"
@@ -87,11 +83,11 @@ def update_status():
     app = UpdateStatus()
     result = app.send_request("")
     data = result
-    return data
+    return data if data else "No data received"
 
 if __name__ == "__main__":
     eel.init('ui')
     app = EnovaApp()
-    eel.start('index.html')
+    eel.start('index.html', mode='electron')
     while True:
         eel.sleep(1)
