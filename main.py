@@ -2,6 +2,7 @@ import eel
 from functions.APIGetEcho import APIGetEcho
 from functions.APIUpdateStatus import APIUpdateStatus
 from functions.APIGetContractors import APIGetContractors
+from functions.APIAddContractor import APIAddContractor
 
 @eel.expose
 def send_echo(param):
@@ -22,6 +23,12 @@ def update_status():
     result = app.send_request("")
     data = result
     return data
+
+@eel.expose
+def add_contractor(data):
+    app = APIAddContractor()
+    result = app.send_request(data)
+    return result
 
 if __name__ == "__main__":
     eel.init('ui')
