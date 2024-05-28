@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="icon" type="image/x-icon" href="/img/enova-logo.ico" />
-    <link rel="stylesheet" href="styles/getecho.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="./js/output.js"></script>
@@ -17,6 +17,20 @@
   </script>
   </head>
   <body>
+    <div class="mainApp">
+      <div class="topBar">
+        <div class="titleBar">
+          <div class="title">
+            Electron - Echo
+          </div>
+        </div>
+        <div class="titleBarBtns">
+          <button id="minimizeBtn" class="topBtn minimizeBtn" title="Minimize"></button>
+          <button id="maxResBtn" class="topBtn maximizeBtn" title="Maximize"></button>
+          <button id="closeBtn" class="topBtn closeBtn" title="Close"></button>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="sidebar active">
         <div class="menu-btn">
@@ -78,7 +92,7 @@
               </a>
             </li>
             <li>
-              <a href="#" onclick="exitApp()">
+              <a href="#" id="exitBtn">
                 <i class="icon ph-bold ph-sign-out"></i>
                 <span class="text">Exit</span>
               </a>
@@ -136,5 +150,6 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/theme-save.js"></script>
     <script type="text/javascript" src="js/echo.js"></script>
+    <script type="text/javascript" src="js/appFunctions.js"></script>
   </body>
 </html>

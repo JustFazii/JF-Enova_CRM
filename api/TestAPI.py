@@ -6,7 +6,7 @@ class EnovaApp:
 
     def send_request(self, param):
         login_url = "http://192.168.0.23:6001/api/LoginApi"
-        service_url = "http://192.168.0.23:6001/api/ServiceImpApiANS/TestApi"  # Zastąp odpowiednim endpointem
+        service_url = "http://192.168.0.23:6001/api/ServiceImpApiANS/TestApi"
 
         headers = {
             'Authorization': f'Bearer {self.base_token}',
