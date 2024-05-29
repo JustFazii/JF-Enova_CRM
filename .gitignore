@@ -14,8 +14,9 @@
 pyvenv.cfg
 .venv
 .tests
+.vscode
 __pycache__
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/venv
-functions/contractors.py
+.vscode/settings.json

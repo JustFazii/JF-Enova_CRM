@@ -3,6 +3,7 @@ from functions.APIGetEcho import APIGetEcho
 from functions.APIUpdateStatus import APIUpdateStatus
 from functions.APIGetContractors import APIGetContractors
 from functions.APIAddContractor import APIAddContractor
+from functions.APIUpdateContractor import APIUpdateContractor
 
 @eel.expose
 def send_echo(param):
@@ -27,6 +28,12 @@ def update_status():
 @eel.expose
 def add_contractor(data):
     app = APIAddContractor()
+    result = app.send_request(data)
+    return result
+
+@eel.expose
+def update_contractor(data):
+    app = APIUpdateContractor()
     result = app.send_request(data)
     return result
 

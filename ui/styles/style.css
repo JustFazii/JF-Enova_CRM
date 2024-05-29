@@ -712,3 +712,120 @@ tr .td-second {
   text-align: center;
   flex-direction: column;
 }
+
+/* updateContractors CSS */
+.up-cont-box {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.up-cont-content {
+  height: 90vh;
+}
+
+.up-cont-box-o {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.up-cont-box-s {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.up-cont-btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn-up {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  width: 100px;
+  background-color: var(--secondary-color);
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 7px 40px 7px 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navbar-up {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border-radius: 10px;
+  text-align: right;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.navbar-up a {
+  text-decoration: none;
+  color: var(--button-color);
+  font-size: 15px;
+  margin-right: 45px;
+  width: 125px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.navbar-up a:hover {
+  color: var(--text-color2);
+}
+
+.navbar-up .icon {
+  font-size: 20px;
+}
+
+.submit-btn-up:hover {
+  color: #9b9b9b;
+}
+
+.up-input-box {
+  background-color: var(--text-color1);
+  color: var(--text-color);
+  width: 250px;
+  height: 30px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+}
+
+.get-cont-response {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
