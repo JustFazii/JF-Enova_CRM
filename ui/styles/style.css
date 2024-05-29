@@ -9,6 +9,8 @@
   --text-color3: #fff;
   --text-hover-color: #000;
   --button-color: #757575;
+  --table-second-color: #bababa;
+  --table-hover-color: #a1a1a1;
 }
 
 .dark-theme {
@@ -20,6 +22,8 @@
   --text-color3: #ffffff;
   --text-hover-color: #000000;
   --button-color: #757575;
+  --table-second-color: #696969;
+  --table-hover-color: #808080;
 }
 
 * {

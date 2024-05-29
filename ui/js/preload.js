@@ -1,6 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-// Eksponowanie IPC renderer w kontekście przeglądarki
 contextBridge.exposeInMainWorld('electron', {
   ipcRenderer: {
     send: (channel, ...args) => ipcRenderer.send(channel, ...args),
