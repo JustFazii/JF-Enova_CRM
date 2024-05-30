@@ -1,13 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-  if (typeof window.eel === 'undefined') {
-    console.error('eel is not defined');
-    return;
-  }
-  eel.update_status()(function(data) {
-    document.getElementById("status").innerText = data;
-  });
-});
-
 eel.expose(update_output2);
 function update_output2(data) {
   document.getElementById("output2").innerHTML = data;
