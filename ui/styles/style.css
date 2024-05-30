@@ -9,6 +9,7 @@
   --text-color3: #fff;
   --text-hover-color: #000;
   --button-color: #757575;
+  --table-first-color: #dddddd;
   --table-second-color: #bababa;
   --table-hover-color: #a1a1a1;
 }
@@ -22,6 +23,7 @@
   --text-color3: #ffffff;
   --text-hover-color: #000000;
   --button-color: #757575;
+  --table-first-color: #8f8f8f;
   --table-second-color: #696969;
   --table-hover-color: #808080;
 }
@@ -569,8 +571,8 @@ body {
 }
 
 .table-content th {
-  background-color: #757575;
-  color: black;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-size: 15px;
   border: 1px solid #000;
   padding-top: 5px;
@@ -592,7 +594,7 @@ body {
 }
 
 tr .td-first {
-  background-color: var(--table-color);
+  background-color: var(--table-first-color);
 }
 
 tr .td-second {

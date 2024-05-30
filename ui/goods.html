@@ -8,19 +8,21 @@
     <link rel="icon" type="image/x-icon" href="/img/enova-logo.ico" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Enova365 UI - WebApp created in Python</title>
-    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="./eel.js"></script>
     <script type="text/javascript" src="./js/output.js"></script>
     <script>
       if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark-theme");
+          document.documentElement.classList.add("dark-theme");
       }
-    </script>
+  </script>
   </head>
   <body>
     <div class="mainApp">
       <div class="topBar">
         <div class="titleBar">
-          <div class="title">Electron - Add Contractor</div>
+          <div class="title">
+            Electron - Dashboard
+          </div>
         </div>
         <div class="titleBarBtns">
           <button id="minimizeBtn" class="topBtn minimizeBtn"></button>
@@ -40,7 +42,7 @@
           </div>
           <div class="service-details">
             <p class="title">Enova Python App</p>
-            <p class="subtitle">WebApp</p>
+            <p class="subtitle">Mikołaj Trawkowski</p>
           </div>
         </div>
         <div class="nav">
@@ -53,7 +55,7 @@
                   <span class="text">Dashboard</span>
                 </a>
               </li>
-              <li class="active">
+              <li>
                 <a href="#">
                   <i class="icon ph-bold ph-address-book"></i>
                   <span class="text">Contractors</span>
@@ -113,7 +115,7 @@
                   </li>
               </ul>
               </li>
-              <li>
+              <li class="active">
                 <a href="goods.html">
                   <i class="icon ph-bold ph-tote"></i>
                   <span class="text">Goods</span>
@@ -132,13 +134,13 @@
           <p class="title">Control Panel</p>
           <ul>
             <li>
-              <a style="cursor: pointer">
+              <a style="cursor: pointer;">
                 <i class="icon ph-bold ph-webhooks-logo"></i>
                 <span class="text" id="status"></span>
               </a>
             </li>
             <li>
-              <a id="theme" style="cursor: pointer">
+              <a href="#" id="theme" style="cursor: pointer;">
                 <i class="icon ph-bold ph-paint-roller"></i>
                 <span class="text">Change Theme</span>
               </a>
@@ -153,60 +155,7 @@
         </div>
       </div>
       <div class="main-window">
-        <div class="navbar-ac">
-          <a href="contractors.html">
-            <i class="icon ph-bold ph-caret-left"></i>
-            <span class="text">Go Back</span>
-          </a>
-        </div>
-        <div class="main-window-content-contractors">
-          <div class="func-name">
-            <i class="icon ph-bold ph-user-plus"></i>
-            <span>Update Contractor</span>
-          </div>
-          <div class="func-description">
-            <p>This service is used to update existing contractor in database. <br/>
-            To properly update contractor you need to provide correct "Kod" for contractor</p>
-          </div>
-        </div>
-        <div class="up-cont-content">
-          <div class="up-cont-box">
-            <div class="up-cont-box-o">
-            <input class="up-input-box" id="code" type="text" placeholder="Kod"/>
-            <input class="up-input-box" id="name" type="text" placeholder="Nazwa"/>
-            <input class="up-input-box" id="nip" type="text" placeholder="NIP"/>
-            <input class="up-input-box" id="address" type="text" placeholder="Adres"/>
-            <input class="up-input-box" id="podvat" type="text" placeholder="Podatnik VAT"/>
-            <input class="up-input-box" id="rodzvatsp" type="text" placeholder="Rodzaj VAT - Sprzedaż"/>
-            <input class="up-input-box" id="rodzvatzk" type="text" placeholder="Rodzaj VAT - Zakup"/>
-            <input class="up-input-box" id="status" type="text" placeholder="Status"/>
-            </div>
-            <div class="up-cont-box-s">
-            <input class="up-input-box" id="vatod" type="text" placeholder="Vat Od"/>
-            <input class="up-input-box" id="ulica" type="text" placeholder="Ulica"/>
-            <input class="up-input-box" id="nrdomu" type="text" placeholder="Nr. Domu"/>
-            <input class="up-input-box" id="kodpoczt" type="text" placeholder="Kod Pocztowy"/>
-            <input class="up-input-box" id="poczta" type="text" placeholder="Poczta"/>
-            <input class="up-input-box" id="woj" type="text" placeholder="Wojewódźtwo"/>
-            <input class="up-input-box" id="miasto" type="text" placeholder="Miasto"/>
-            <input class="up-input-box" id="kraj" type="text" placeholder="kraj"/>
-            </div>
-          </div>
-          <div class="up-cont-btn">
-          <a href="#" class="submit-btn-up" id="submit-btn-up">
-            <span>Send</span>
-          </a>
-          </div>
-          <div class="get-cont-response">
-            <div class="response-text">
-              <p>API Respond</p>
-              <i class="icon ph-bold ph-caret-down"></i>
-            </div>
-            <div class="callback-text" id="get-contup-response"></div>
-          </div>
-        </div>
       </div>
-    </div>
 
     <!--Jquery-->
     <script
@@ -217,6 +166,5 @@
     <script src="js/script.js"></script>
     <script src="js/theme-save.js"></script>
     <script type="text/javascript" src="js/appFunctions.js"></script>
-    <script type="text/javascript" src="./js/updateContractor.js"></script>
   </body>
 </html>

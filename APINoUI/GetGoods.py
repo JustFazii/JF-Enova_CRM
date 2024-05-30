@@ -7,7 +7,7 @@ class EnovaApp:
 
     def send_request(self, param):
         login_url = "http://192.168.0.23:6001/api/LoginApi"
-        service_url = "http://192.168.0.23:6001/api/ServiceImpApiANS/GetKontrahenci"
+        service_url = "http://192.168.0.23:6001/api/ServiceImpApiANS/GetTowary"
 
         headers = {
             'Authorization': f'Bearer {self.base_token}',
@@ -42,8 +42,8 @@ class EnovaApp:
     def format_data(self, data):
         table = []
         for item in data:
-            table.append([item['ID'], item['Kod'], item['Nazwa'], item['NIP'], item['Adres']])
-        return tabulate(table, headers=["ID", "Kod", "Nazwa", "NIP", "Adres"], tablefmt="grid")
+            table.append([item['Kod'], item['Nazwa'], str(item['Cena']) + ' ' + item['Waluta'], item['IloscDostepna']])
+        return tabulate(table, headers=["Kod", "Nazwa", "Cena", "Ilosc Dostępna"], tablefmt="grid")
 
 if __name__ == "__main__":
     app = EnovaApp()
