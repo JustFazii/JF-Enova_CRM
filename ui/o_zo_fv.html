@@ -49,7 +49,7 @@
           <div class="menu">
             <p class="title">Main Menu</p>
             <ul>
-              <li class="active">
+              <li>
                 <a href="index.html">
                   <i class="icon ph-bold ph-house-simple"></i>
                   <span class="text">Dashboard</span>
@@ -82,7 +82,7 @@
                   </li>
               </ul>
               </li>
-              <li>
+              <li class="active">
                 <a href="#">
                   <i class="icon ph-bold ph-invoice"></i>
                   <span class="text">Orders</span>
@@ -155,8 +155,41 @@
         </div>
       </div>
       <div class="main-window">
+        <div class="navbar-ac">
+          <a href="contractors.html">
+            <i class="icon ph-bold ph-caret-left"></i>
+            <span class="text">Go Back</span>
+          </a>
+        </div>
+        <div class="main-window-content-contractors">
+          <div class="func-name">
+            <i class="icon ph-bold ph-list-plus"></i>
+            <span>ZO > FV Relation</span>
+          </div>
+          <div class="func-description">
+            <p>This service is used to add Relation between ZO document and FV</p>
+          </div>
+        </div>
+        <div class="add-cont-content">
+          <div class="add-cont-box">
+            <input class="add-input-box" id="zofv-id" type="text" placeholder="ID"/>
+          </div>
+          <div class="add-cont-btn">
+          <a href="#" class="submit-btn-ac" id="submit-btn-zofv">
+            <span>Send</span>
+          </a>
+          </div>
+          <div class="get-cont-response">
+            <div class="response-text">
+              <p>API Respond</p>
+              <i class="icon ph-bold ph-caret-down"></i>
+            </div>
+            <div class="callback-text" id="zofv-response"></div>
+          </div>
+        </div>
       </div>
 
+    <!--Jquery-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
       integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
