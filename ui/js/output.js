@@ -14,3 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 if (localStorage.getItem("theme") === "dark") {
   document.documentElement.classList.add("dark-theme");
 }
+
+document.onkeydown = (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+      e.preventDefault();
+  }
+};
