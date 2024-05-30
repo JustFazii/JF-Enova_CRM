@@ -5,6 +5,8 @@ from functions.APIGetContractors import APIGetContractors
 from functions.APIAddContractor import APIAddContractor
 from functions.APIUpdateContractor import APIUpdateContractor
 from functions.APIGetGoods import APIGetGoods
+from functions.APIZDZKRelation import APIZDZKRelation
+from functions.APIZOFVRelation import APIZOFVRelation
 
 @eel.expose
 def send_echo(param):
@@ -41,6 +43,18 @@ def update_contractor(data):
 def show_goods():
     app = APIGetGoods()
     result = app.send_request("")
+    return result
+
+@eel.expose
+def add_zdzk(data):
+    app = APIZDZKRelation()
+    result = app.send_request(data)
+    return result
+
+@eel.expose
+def add_zofv(data):
+    app = APIZOFVRelation()
+    result = app.send_request(data)
     return result
 
 if __name__ == "__main__":
