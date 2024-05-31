@@ -45,13 +45,13 @@ class APIGetContractors:
                 return f"Error: {ve}"
             
     def format_data(self, data):
-        html = "<table class='table-content'><thead><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>NIP</th><th>Adres</th></tr></thead>"
+        html = "<table class='table-content'><thead><tr><th>ID <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Kod <span class='icon-arrow'>&uparrow;</span></th><th>Nazwa <span class='icon-arrow'>&uparrow;</span></th><th>NIP <span class='icon-arrow'>&uparrow;</span></th><th>Adres <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
                 f"<tr>"
                 f"<td class='{cls}'>{item['ID']}</td>"
-                f"<td class='{cls}'>{item['Kod']}</td>"
+                f"<td class='{cls} active'>{item['Kod']}</td>"
                 f"<td class='{cls}'>{item['Nazwa']}</td>"
                 f"<td class='{cls}'>{item['NIP']}</td>"
                 f"<td class='{cls}'>{item['Adres']}</td>"

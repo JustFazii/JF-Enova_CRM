@@ -40,7 +40,7 @@ class APIGetGoods:
             print(f"Błąd: {ve}")
 
     def format_data(self, data):
-        html = "<table class='table-content'><tr><th>Kod</th><th>Nazwa</th><th>Cena</th><th>Ilosc Dostepna</th></tr>"
+        html = "<table class='table-content'><thead><tr><th>Kod <span class='icon-arrow'>&uparrow;</span></th><th>Nazwa <span class='icon-arrow'>&uparrow;</span></th><th>Cena <span class='icon-arrow'>&uparrow;</span></th><th>Ilosc Dostepna <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
