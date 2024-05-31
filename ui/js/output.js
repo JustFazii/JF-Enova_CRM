@@ -10,9 +10,12 @@ function update_output2(data) {
   function searchTable() {
     table_rows.forEach((row, i) => {
       let table_data = row.textContent,
-        search_data = search.value;
+        search_data = search.value.toLowerCase();
 
-      row.classList.toggle("hide", table_data.indexOf(search_data) < 0);
+      row.classList.toggle(
+        "hide",
+        table_data.toLowerCase().indexOf(search_data) < 0
+      );
       row.style.setProperty("--delay", i / 25 + "s");
     });
   }
@@ -43,23 +46,53 @@ function update_output2(data) {
       .sort((a, b) => {
         let first_row = a
             .querySelectorAll("td")
-            [column].textContent.toLowerCase(),
+            [column].textContent.trim()
+            .toLowerCase(),
           second_row = b
             .querySelectorAll("td")
-            [column].textContent.toLowerCase();
+            [column].textContent.trim()
+            .toLowerCase();
+
+        let first_num = parseFloat(first_row),
+          second_num = parseFloat(second_row);
+
+        if (!isNaN(first_num) && !isNaN(second_num)) {
+          return sort_asc ? first_num - second_num : second_num - first_num;
+        }
 
         return sort_asc
-          ? first_row < second_row
+          ? first_row > second_row
             ? 1
             : -1
-          : first_row < second_row
+          : first_row > second_row
           ? -1
           : 1;
       })
-      .map((sorted_row) =>
+      .forEach((sorted_row) =>
         document.querySelector("tbody").appendChild(sorted_row)
       );
   }
+}
+
+function sort_table(column, sort_asc) {
+  [...table_rows]
+    .sort((a, b) => {
+      let first_row = a
+          .querySelectorAll("td")
+          [column].textContent.toLowerCase(),
+        second_row = b.querySelectorAll("td")[column].textContent.toLowerCase();
+
+      return sort_asc
+        ? first_row < second_row
+          ? 1
+          : -1
+        : first_row < second_row
+        ? -1
+        : 1;
+    })
+    .map((sorted_row) =>
+      document.querySelector("tbody").appendChild(sorted_row)
+    );
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -75,9 +108,12 @@ document.addEventListener("DOMContentLoaded", function () {
       function searchTable() {
         table_rows.forEach((row, i) => {
           let table_data = row.textContent,
-            search_data = search.value;
+            search_data = search.value.toLowerCase();
 
-          row.classList.toggle("hide", table_data.indexOf(search_data) < 0);
+          row.classList.toggle(
+            "hide",
+            table_data.toLowerCase().indexOf(search_data) < 0
+          );
           row.style.setProperty("--delay", i / 25 + "s");
         });
       }
@@ -108,20 +144,29 @@ document.addEventListener("DOMContentLoaded", function () {
           .sort((a, b) => {
             let first_row = a
                 .querySelectorAll("td")
-                [column].textContent.toLowerCase(),
+                [column].textContent.trim()
+                .toLowerCase(),
               second_row = b
                 .querySelectorAll("td")
-                [column].textContent.toLowerCase();
+                [column].textContent.trim()
+                .toLowerCase();
+
+            let first_num = parseFloat(first_row),
+              second_num = parseFloat(second_row);
+
+            if (!isNaN(first_num) && !isNaN(second_num)) {
+              return sort_asc ? first_num - second_num : second_num - first_num;
+            }
 
             return sort_asc
-              ? first_row < second_row
+              ? first_row > second_row
                 ? 1
                 : -1
-              : first_row < second_row
+              : first_row > second_row
               ? -1
               : 1;
           })
-          .map((sorted_row) =>
+          .forEach((sorted_row) =>
             document.querySelector("tbody").appendChild(sorted_row)
           );
       }

@@ -897,3 +897,53 @@ thead th.asc span.icon-arrow {
   text-align: center;
   flex-direction: column;
 }
+
+.dashboard-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.dashboard-link {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid var(--text-color);
+}
+
+.dashboard-link a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.dashboard-link i {
+  font-size: 30px;
+}
+
+.dashboard-link span {
+  font-size: 20px;
+}
+
+.dashboard-link p {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.dashboard-link a:hover {
+  color: var(--text-color2);
+}
+
+.dashboard-link:hover {
+  border: 1px solid var(--text-color2);
+}
