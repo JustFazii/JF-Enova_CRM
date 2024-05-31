@@ -9,7 +9,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
-    minWidth: 850,
+    minWidth: 950,
     minHeight: 650,
     frame: false,
     webPreferences: {
@@ -23,7 +23,7 @@ function createWindow() {
 
   mainWindow.loadURL("http://localhost:8000/index.html");
   mainWindow.setBackgroundColor('#030303')
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function () {
     mainWindow = null;

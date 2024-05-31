@@ -45,7 +45,7 @@ class APIGetContractors:
                 return f"Error: {ve}"
             
     def format_data(self, data):
-        html = "<table class='table-content'><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>NIP</th><th>Adres</th></tr>"
+        html = "<table class='table-content'><thead><tr><th>ID</th><th>Kod</th><th>Nazwa</th><th>NIP</th><th>Adres</th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
