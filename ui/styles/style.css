@@ -12,6 +12,7 @@
   --table-first-color: #dddddd;
   --table-second-color: #bababa;
   --table-hover-color: #a1a1a1;
+  --table-active-color: #187a33;
 }
 
 .dark-theme {
@@ -26,6 +27,7 @@
   --table-first-color: #8f8f8f;
   --table-second-color: #696969;
   --table-hover-color: #808080;
+  --table-active-color: greenyellow;
 }
 
 * {
@@ -653,7 +655,7 @@ thead th span.icon-arrow {
 
 thead th.active, tbody td.active {
   transition: all 0.3s;
-  color: greenyellow;
+  color: var(--table-active-color);
 }
 
 thead th.asc span.icon-arrow {
