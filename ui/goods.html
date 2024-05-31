@@ -12,17 +12,15 @@
     <script type="text/javascript" src="./js/goods.js"></script>
     <script>
       if (localStorage.getItem("theme") === "dark") {
-          document.documentElement.classList.add("dark-theme");
+        document.documentElement.classList.add("dark-theme");
       }
-  </script>
+    </script>
   </head>
   <body>
     <div class="mainApp">
       <div class="topBar">
         <div class="titleBar">
-          <div class="title">
-            Electron - Contractors
-          </div>
+          <div class="title">Electron - Contractors</div>
         </div>
         <div class="titleBarBtns">
           <button id="minimizeBtn" class="topBtn minimizeBtn"></button>
@@ -60,8 +58,8 @@
                   <i class="icon ph-bold ph-address-book"></i>
                   <span class="text">Contractors</span>
                   <i class="arrow ph-bold ph-caret-down"></i>
-              </a>
-              <ul class="sub-menu">
+                </a>
+                <ul class="sub-menu">
                   <li>
                     <a href="contractors.html">
                       <i class="icon ph-bold ph-address-book"></i>
@@ -80,15 +78,15 @@
                       <span class="text">Update Contractor</span>
                     </a>
                   </li>
-              </ul>
+                </ul>
               </li>
               <li>
                 <a href="#">
                   <i class="icon ph-bold ph-invoice"></i>
                   <span class="text">Orders</span>
                   <i class="arrow ph-bold ph-caret-down"></i>
-              </a>
-              <ul class="sub-menu">
+                </a>
+                <ul class="sub-menu">
                   <li>
                     <a href="o_zo_fv.html">
                       <i class="icon ph-bold ph-list-plus"></i>
@@ -113,7 +111,7 @@
                       <span class="text">Invoice ZD > ZK</span>
                     </a>
                   </li>
-              </ul>
+                </ul>
               </li>
               <li class="active">
                 <a href="goods.html">
@@ -134,13 +132,13 @@
           <p class="title">Control Panel</p>
           <ul>
             <li>
-              <a style="cursor: pointer;">
+              <a style="cursor: pointer">
                 <i class="icon ph-bold ph-webhooks-logo"></i>
                 <span class="text" id="status"></span>
               </a>
             </li>
             <li>
-              <a id="theme" style="cursor: pointer;">
+              <a id="theme" style="cursor: pointer">
                 <i class="icon ph-bold ph-paint-roller"></i>
                 <span class="text">Change Theme</span>
               </a>
@@ -168,8 +166,17 @@
           </div>
           <div class="func-description">
             <p>
-              This service is used to show all available products, that are in database.
+              This service is used to show all available products, that are in
+              database.
             </p>
+          </div>
+          <div class="input-group">
+            <input
+              class="input-box-group"
+              type="search"
+              placeholder="Search data in table..."
+            />
+            <i class="ph ph-magnifying-glass"></i>
           </div>
           <div class="main-table">
             <div id="output3"></div>
