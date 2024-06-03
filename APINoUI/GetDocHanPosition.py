@@ -49,6 +49,6 @@ class EnovaApp:
 if __name__ == "__main__":
     app = EnovaApp()
     zdzk = {
-        "value": "11",
+        "value": "14",
     }
     app.send_request(zdzk)

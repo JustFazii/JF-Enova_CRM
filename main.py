@@ -1,7 +1,8 @@
 import eel
 from functions.APIGetDocHanPosition import APIShowHandelDocumentPositions
+from functions.APIGetDocumentsZD import APIGetHandelDocumentsZD
 from functions.APIGetEcho import APIGetEcho
-from functions.APIGetHandelDocuments import APIGetHandelDocuments
+from functions.APIGetDocumentsZO import APIGetHandelDocumentsZO
 from functions.APIUpdateStatus import APIUpdateStatus
 from functions.APIGetContractors import APIGetContractors
 from functions.APIAddContractor import APIAddContractor
@@ -49,7 +50,13 @@ def show_goods():
 
 @eel.expose
 def update_output4():
-    app = APIGetHandelDocuments()
+    app = APIGetHandelDocumentsZO()
+    result = app.send_request("")
+    return result
+
+@eel.expose
+def update_output5():
+    app = APIGetHandelDocumentsZD()
     result = app.send_request("")
     return result
 

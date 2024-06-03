@@ -4,14 +4,14 @@ document.getElementById('submit-btn-p').addEventListener('click', function(event
     const input = document.getElementById('input-box-p').value;
     console.log(input);
     eel.show_handeldocspos({ value: input })(function(response) {
-        document.getElementById('output5').innerHTML = response;
+        document.getElementById('output4').innerHTML = response;
         addTableFeatures();
     });
 });
 
-eel.expose(update_output5);
-function update_output5(data) {
-    document.getElementById('output5').innerHTML = data;
+eel.expose(update_output4);
+function update_output4(data) {
+    document.getElementById('output4').innerHTML = data;
     addTableFeatures();
 }
 
