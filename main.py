@@ -1,8 +1,11 @@
 import eel
+from functions.APIGenerateInvoiceFV import APIZOFVInvoice
+from functions.APIGenerateInvoiceZK import APIZDZKInvoice
 from functions.APIGetDocHanPosition import APIShowHandelDocumentPositions
 from functions.APIGetDocumentsZD import APIGetHandelDocumentsZD
 from functions.APIGetEcho import APIGetEcho
 from functions.APIGetDocumentsZO import APIGetHandelDocumentsZO
+from functions.APIGetInvoices import APIGetInvoices
 from functions.APIUpdateStatus import APIUpdateStatus
 from functions.APIGetContractors import APIGetContractors
 from functions.APIAddContractor import APIAddContractor
@@ -61,6 +64,13 @@ def update_output5():
     return result
 
 @eel.expose
+def update_output6():
+    app = APIGetInvoices()
+    result = app.send_request("")
+    return result
+
+
+@eel.expose
 def show_handeldocspos(param):
     app = APIShowHandelDocumentPositions()
     result = app.send_request(param)
@@ -69,6 +79,18 @@ def show_handeldocspos(param):
 @eel.expose
 def add_zdzk(data):
     app = APIZDZKRelation()
+    result = app.send_request(data)
+    return result
+
+@eel.expose
+def add_zdzk_inv(data):
+    app = APIZDZKInvoice()
+    result = app.send_request(data)
+    return result
+
+@eel.expose
+def add_zofv_inv(data):
+    app = APIZOFVInvoice()
     result = app.send_request(data)
     return result
 

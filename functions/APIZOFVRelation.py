@@ -31,7 +31,9 @@ class APIZOFVRelation:
             service_response = requests.post(add_zofv_url, headers=service_headers)
             service_response.raise_for_status()
             data = service_response.json()
+            
             return data
+        
         except requests.exceptions.RequestException as e:
             return f"Błąd podczas komunikacji z API: {e}"
         except ValueError as ve:

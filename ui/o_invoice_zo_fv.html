@@ -8,8 +8,8 @@
     <link rel="icon" type="image/x-icon" href="/img/enova-logo.ico" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Enova365 UI - WebApp created in Python</title>
-    <script type="text/javascript" src="./eel.js"></script>
-    <script type="text/javascript" src="./js/output.js"></script>
+    <script src="./eel.js"></script>
+    <script src="./js/output.js"></script>
     <script>
       if (localStorage.getItem("theme") === "dark") {
           document.documentElement.classList.add("dark-theme");
@@ -82,7 +82,7 @@
                   </li>
               </ul>
               </li>
-              <li>
+              <li class="active">
                 <a href="#">
                   <i class="icon ph-bold ph-invoice"></i>
                   <span class="text">Orders</span>
@@ -90,20 +90,26 @@
               </a>
               <ul class="sub-menu">
                 <li>
+                  <a href="getinvoices.html">
+                    <i class="icon ph-bold ph-folder-lock"></i>
+                    <span class="text">Invoices</span>
+                  </a>
+                </li>
+                <li>
                   <a href="getdocumentsZO.html">
-                    <i class="icon ph-bold ph-file"></i>
+                    <i class="icon ph-bold ph-file-lock"></i>
                     <span class="text">Documents ZO</span>
                   </a>
                 </li>
                 <li>
                   <a href="getdocumentsZD.html">
-                    <i class="icon ph-bold ph-file"></i>
+                    <i class="icon ph-bold ph-file-lock"></i>
                     <span class="text">Documents ZD</span>
                   </a>
                 </li>
                 <li>
                   <a href="gethandeldocumentspos.html">
-                    <i class="icon ph-bold ph-file"></i>
+                    <i class="icon ph-bold ph-file-archive"></i>
                     <span class="text">Documents Postitions</span>
                   </a>
                 </li>
@@ -215,7 +221,8 @@
     ></script>
     <script src="js/script.js"></script>
     <script src="js/theme-save.js"></script>
-    <script type="text/javascript" src="js/appFunctions.js"></script>
-    <script type="text/javascript" src="./js/status.js"></script>
+    <script src="js/appFunctions.js"></script>
+    <script src="./js/status.js"></script>
+    <script src="./js/zofv_inv.js"></script>
   </body>
 </html>

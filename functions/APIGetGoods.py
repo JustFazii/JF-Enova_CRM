@@ -33,7 +33,9 @@ class APIGetGoods:
             service_response.raise_for_status()
             data = service_response.json()
             formatted_data = self.format_data(data)
+            
             return formatted_data
+        
         except requests.exceptions.RequestException as e:
             print(f"Błąd podczas komunikacji z API: {e}")
         except ValueError as ve:

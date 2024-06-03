@@ -54,7 +54,7 @@
                   <span class="text">Dashboard</span>
                 </a>
               </li>
-              <li>
+              <li class="active">
                 <a href="#">
                   <i class="icon ph-bold ph-address-book"></i>
                   <span class="text">Contractors</span>
@@ -89,23 +89,23 @@
               </a>
               <ul class="sub-menu">
                 <li>
-                  <a href="getinvoices.html">
-                    <i class="icon ph-bold ph-folder-lock"></i>
-                    <span class="text">Invoices</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="getdocumentsZO.html">
-                    <i class="icon ph-bold ph-file-lock"></i>
-                    <span class="text">Documents ZO</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="getdocumentsZD.html">
-                    <i class="icon ph-bold ph-file-lock"></i>
-                    <span class="text">Documents ZD</span>
-                  </a>
-                </li>
+                    <a href="getinvoices.html">
+                      <i class="icon ph-bold ph-folder-lock"></i>
+                      <span class="text">Invoices</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="getdocumentsZO.html">
+                      <i class="icon ph-bold ph-file-lock"></i>
+                      <span class="text">Documents ZO</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="getdocumentsZD.html">
+                      <i class="icon ph-bold ph-file-lock"></i>
+                      <span class="text">Documents ZD</span>
+                    </a>
+                  </li>
                 <li>
                   <a href="gethandeldocumentspos.html">
                     <i class="icon ph-bold ph-file-archive"></i>
@@ -178,25 +178,21 @@
         </div>
       </div>
       <div class="main-window">
-        <div class="navbar">
-          <a href="addContractor.html">
-            <i class="icon ph-bold ph-user-plus"></i>
-            <span class="text">Add</span>
-          </a>
-          <a href="updateContractors.html">
-            <i class="icon ph-bold ph-user-gear"></i>
-            <span class="text">Update</span>
-          </a>
-        </div>
+        <div class="navbar-get-echo">
+            <a href="#" class="not-available">
+              <i class="icon ph-bold ph-x"></i>
+              <span class="text">No options available</span>
+            </a>
+          </div>
         <div class="main-window-content-contractors">
           <div class="func-name">
-            <i class="icon ph-bold ph-file-lock"></i>
-            <span>Documents ZO</span>
+            <i class="icon ph-bold ph-folder-lock"></i>
+            <span>Invoices</span>
           </div>
           <div class="func-description">
             <p>
-              This service is used to manage all available documents in
-              database. Here you will have all available documents.<br />
+              This service is used to manage all available contractors in
+              database. Here you will have all available contractors.<br />
               You can edit their data or add a new one.
             </p>
           </div>
@@ -205,7 +201,7 @@
             <i class="ph ph-magnifying-glass"></i>
           </div>
           <div class="main-table">
-            <div id="output4"></div>
+            <div id="output6"></div>
           </div>
         </div>
       </div>
@@ -221,6 +217,6 @@
   <script src="js/script.js"></script>
   <script src="js/theme-save.js"></script>
   <script src="js/appFunctions.js"></script>
-  <script type="text/javascript" src="./js/output.js"></script>
   <script src="js/status.js"></script>
+  <script src="js/output.js"></script>
 </html>

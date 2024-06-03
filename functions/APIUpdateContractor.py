@@ -49,7 +49,9 @@ class APIUpdateContractor:
             service_response = requests.post(add_kontrahent_url, headers=service_headers, json=kontrahent_data)
             service_response.raise_for_status()
             data = service_response.json()
+            
             return data
+        
         except requests.exceptions.RequestException as e:
             print(f"Błąd podczas komunikacji z API: {e}")
             return {"error": str(e)}
