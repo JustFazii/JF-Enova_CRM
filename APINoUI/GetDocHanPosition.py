@@ -1,4 +1,5 @@
 import requests
+from tabulate import tabulate
 
 class EnovaApp:
     def __init__(self):
@@ -31,15 +32,23 @@ class EnovaApp:
             service_response = requests.post(add_zdzk_url, headers=service_headers)
             service_response.raise_for_status()
             data = service_response.json()
-            print(f"{data}")
+            
+            print(f"{self.format_data(data)}")
+            
         except requests.exceptions.RequestException as e:
             print(f"Błąd podczas komunikacji z API: {e}")
         except ValueError as ve:
             print(f"Błąd: {ve}")
+            
+    def format_data(self, data):
+        table = []
+        for item in data:
+            table.append([item['KodTowaru'], item['Ilosc'], item['Cena']])
+        return tabulate(table, headers=["KodTowaru", "Ilosc", "Cena"], tablefmt="grid")
 
 if __name__ == "__main__":
     app = EnovaApp()
     zdzk = {
-        "value": "3",
+        "value": "11",
     }
     app.send_request(zdzk)

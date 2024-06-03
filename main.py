@@ -14,14 +14,12 @@ from functions.APIZOFVRelation import APIZOFVRelation
 def send_echo(param):
     app = APIGetEcho()
     result = app.send_request(param)
-    print(f"send_echo result: {result}")  # Dodaj debugowanie
     return result
 
 @eel.expose
 def refresh_contractors():
     app = APIGetContractors()
     result = app.send_request("")
-    print(f"refresh_contractors result: {result}")  # Dodaj debugowanie
     return result
 
 @eel.expose
@@ -29,56 +27,48 @@ def update_status():
     app = APIUpdateStatus()
     result = app.send_request("")
     data = result
-    print(f"update_status result: {data}")  # Dodaj debugowanie
     return data
 
 @eel.expose
 def add_contractor(data):
     app = APIAddContractor()
     result = app.send_request(data)
-    print(f"add_contractor result: {result}")  # Dodaj debugowanie
     return result
 
 @eel.expose
 def update_contractor(data):
     app = APIUpdateContractor()
     result = app.send_request(data)
-    print(f"update_contractor result: {result}")  # Dodaj debugowanie
     return result
 
 @eel.expose
 def show_goods():
     app = APIGetGoods()
     result = app.send_request("")
-    print(f"show_goods result: {result}")  # Dodaj debugowanie
     return result
 
 @eel.expose
 def update_output4():
     app = APIGetHandelDocuments()
     result = app.send_request("")
-    print(f"show_handeldocs result: {result}")  # Dodaj debugowanie
     return result
 
 @eel.expose
-def show_handeldocspos(data):
+def show_handeldocspos(param):
     app = APIShowHandelDocumentPositions()
-    result = app.send_request(data)
-    print(f"show_handeldocspos result: {result}")  # Dodaj debugowanie
+    result = app.send_request(param)
     return result
 
 @eel.expose
 def add_zdzk(data):
     app = APIZDZKRelation()
     result = app.send_request(data)
-    print(f"add_zdzk result: {result}")  # Dodaj debugowanie
     return result
 
 @eel.expose
 def add_zofv(data):
     app = APIZOFVRelation()
     result = app.send_request(data)
-    print(f"add_zofv result: {result}")  # Dodaj debugowanie
     return result
 
 if __name__ == "__main__":
