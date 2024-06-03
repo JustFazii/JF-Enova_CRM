@@ -35,6 +35,7 @@ class APIGetHandelDocuments:
                             
                 data = service_response.json()
                 html_table = self.format_data(data)
+                print(html_table)
                 return html_table
                 
             except requests.exceptions.RequestException as e:
