@@ -40,6 +40,6 @@ class EnovaApp:
 if __name__ == "__main__":
     app = EnovaApp()
     zofv = {
-        "idDokumentuZO": "4",
+        "idDokumentuZO": "2028",
     }
     app.send_request(zofv)
