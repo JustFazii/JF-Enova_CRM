@@ -19,9 +19,10 @@ class EnovaApp:
             session_token = login_data.get('Token')
 
             if not session_token:
-                raise ValueError("Nie udało się uzyskać tokenu sesji")
+                print("Entered wrong API Token!")
 
             data = session_token
+            print("Successfuly logged into system")
             print(response)
             print(data)
         except requests.exceptions.RequestException as e:
@@ -31,5 +32,4 @@ class EnovaApp:
 
 if __name__ == "__main__":
     app = EnovaApp()
-    param = ""
-    app.send_request(param)
+    app.send_request()
