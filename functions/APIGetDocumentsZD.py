@@ -46,13 +46,13 @@ class APIGetHandelDocumentsZD:
                 return f"Error: {ve}"
             
     def format_data(self, data):
-        html = "<table class='table-content'><thead><tr><th>ID <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Definicja <span class='icon-arrow'>&uparrow;</span></th><th>Data <span class='icon-arrow'>&uparrow;</span></th><th>Kontrahent <span class='icon-arrow'>&uparrow;</span></th><th>Numer Dokumentu <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
+        html = "<table class='table-content'><thead><tr><th>ID <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Definicja Symbol <span class='icon-arrow'>&uparrow;</span></th><th>Data <span class='icon-arrow'>&uparrow;</span></th><th>Kontrahent <span class='icon-arrow'>&uparrow;</span></th><th>Numer Dokumentu <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
                 f"<tr>"
                 f"<td class='{cls}'>{item['ID']}</td>"
-                f"<td class='{cls} active'>{item['Definicja']}</td>"
+                f"<td class='{cls} active'>{item['DefinicjaSymbol']}</td>"
                 f"<td class='{cls}'>{item['Data']}</td>"
                 f"<td class='{cls}'>{item['Kontrahent']}</td>"
                 f"<td class='{cls}'>{item['NumerDokumentu']}</td>"
