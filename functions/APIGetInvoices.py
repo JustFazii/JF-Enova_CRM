@@ -49,7 +49,7 @@ class APIGetInvoices:
             html += (
                 f"<tr>"
                 f"<td class='{cls}'>{item['ID']}</td>"
-                f"<td class='{cls} active'>{item['Definicja']}</td>"
+                f"<td class='{cls} active'>{item['DefinicjaSymbol']}</td>"
                 f"<td class='{cls}'>{item['Data']}</td>"
                 f"<td class='{cls}'>{item['Kontrahent']}</td>"
                 f"<td class='{cls}'>{item['NumerDokumentu']}</td>"
