@@ -1,0 +1,52 @@
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 5px 10px 5px;
+    background-color: var(--text-color1);
+    margin: 10px 15px 10px 0px;
+    float: right;
+    border-radius: 15px;
+    border: 1px solid black
+  }
+  
+  .input-group i {
+    color: var(--button-color);
+    font-size: 20px;
+  }
+  
+  .input-group input {
+    color: var(--button-color);
+    border: none;
+    background-color: transparent;
+  }
+  
+  textarea:focus, input:focus{
+    outline: none;
+  }
+  
+  tbody tr.hide {
+    --delay: .1s;
+    opacity: 0;
+    transition: all .5s ease-in-out var(--delay);
+    transform: translateX(100%);
+  }
+  
+  tbody tr.hide td  {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+  }
+  
+  thead th span.icon-arrow {
+    font-size: 15px;
+  }
+  
+  thead th.active, tbody td.active {
+    transition: all 0.3s;
+    color: var(--table-active-color);
+  }
+  
+  thead th.asc span.icon-arrow {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
