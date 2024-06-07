@@ -33,9 +33,11 @@ class APIStatus:
             data = service_response.json()
             
             if data == "Communication via API is Working!":
-                data = "API Connected"
+                data = "API: Connected"
             else:
                 data = data
+                
+            return data
                 
         except requests.exceptions.RequestException as e:
             print(f"Error when connecting with API: {e}")

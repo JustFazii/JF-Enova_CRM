@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="/eel.js"></script>
-    <script type="text/javascript" src="./js/output.js"></script>
     <script>
       if (localStorage.getItem("theme") === "dark") {
           document.documentElement.classList.add("dark-theme");
@@ -184,10 +183,6 @@
             <i class="icon ph-bold ph-user-plus"></i>
             <span class="text">Add</span>
           </a>
-          <a href="updateContractors.html">
-            <i class="icon ph-bold ph-user-gear"></i>
-            <span class="text">Update</span>
-          </a>
         </div>
         <div class="main-window-content-contractors">
           <div class="func-name">
@@ -198,7 +193,7 @@
             <p>
               This service is used to manage all available contractors in
               database. Here you will have all available contractors.<br />
-              You can edit their data or add a new one.
+              You can edit their data or add a new one. To edit contractor data, just click on icon on the right side of desired contractor.
             </p>
           </div>
           <div class="input-group">
@@ -219,8 +214,9 @@
       crossorigin="anonymous"
     ></script>
   </body>
-  <script src="js/script.js"></script>
-  <script src="js/theme-save.js"></script>
-  <script src="js/appFunctions.js"></script>
-  <script src="js/status.js"></script>
+  <script src="./js/app/menu.js"></script>
+  <script src="./js/app/theme.js"></script>
+  <script src="./js/app/app-bar.js"></script>
+  <!-- Functions API -->
+  <script src="./js/api/output.js"></script>
 </html>

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.error('eel is not defined');
       return;
     }
-    eel.update_status()(function(data) {
+    eel.Status()(function(data) {
       document.getElementById("status").innerText = data;
     });
   });

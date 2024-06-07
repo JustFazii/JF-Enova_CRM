@@ -37,7 +37,7 @@ def Logout(session_token):
 def Status():
     print("Called APIStatus")
     API = APIStatus()
-    result = API.request("")
+    result = API.request()
     print("Returning APIStatus")
     return result
 

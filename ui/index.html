@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="./eel.js"></script>
-    <script type="text/javascript" src="./js/output.js"></script>
+    <script type="text/javascript" src="./js/api/api.js"></script>
     <script>
       if (localStorage.getItem("theme") === "dark") {
           document.documentElement.classList.add("dark-theme");
@@ -179,116 +179,11 @@
         </div>
       </div>
       <div class="main-window">
-        <div class="dashboard-buttons">
-          <div class="dashboard-link">
-            <a href="contractors.html">
-              <i class="icon ph-bold ph-address-book"></i><br>
-              <span class="text">Contractors</span>
-              <p>Display table with all Contractors</p>
-          </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="addContractor.html">
-              <i class="icon ph-bold ph-user-plus"></i><br>
-              <span class="text">Add Contractor</span>
-              <p>Add Contractor to database</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="updateContractors.html">
-              <i class="icon ph-bold ph-user-gear"></i><br>
-              <span class="text">Update Contractor</span>
-              <p>Update contractor in database</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="getinvoices.html">
-              <i class="icon ph-bold ph-folder-lock"></i><br>
-              <span class="text">Invoices</span>
-              <p>Show all available Invoices in database</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="getdocumentsZD.html">
-              <i class="icon ph-bold ph-file-lock"></i><br>
-              <span class="text">ZD Documents</span>
-              <p>Show all available ZD documents in database</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="getdocumentsZO.html">
-              <i class="icon ph-bold ph-file-lock"></i><br>
-              <span class="text">ZO documents</span>
-              <p>Show all available ZO documents in database</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="gethandeldocumentspos.html">
-              <i class="icon ph-bold ph-file-archive"></i><br>
-              <span class="text">Get Handel Documents Positions</span>
-              <p>Show all available position for document</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="o_zo_fv.html">
-              <i class="icon ph-bold ph-list-plus"></i><br>
-              <span class="text">Relation ZO > FV</span>
-              <p>Add relation between ZO and FV documents</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="o_zo_fv.html">
-              <i class="icon ph-bold ph-list-plus"></i><br>
-              <span class="text">Relation ZO > FV</span>
-              <p>Add relation between ZO and FV documents</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="o_invoice_zo_fv.html">
-              <i class="icon ph-bold ph-invoice"></i><br>
-              <span class="text">Invoice ZO > FV</span>
-              <p>Add invoice between ZO and FV documents</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="o_zd_zk.html">
-              <i class="icon ph-bold ph-list-plus"></i><br>
-              <span class="text">Relation ZD > ZK</span>
-              <p>Add relation between ZD and ZK documents</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="o_invoice_zd_zk.html">
-              <i class="icon ph-bold ph-invoice"></i><br>
-              <span class="text">Invoice ZD > ZK</span>
-              <p>Add invoice between ZD and ZK documents</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="goods.html">
-              <i class="icon ph-bold ph-tote"></i><br>
-              <span class="text">Goods</span>
-              <p>Display table with all Goods</p>
-            </a>
-          </div>
-          <div class="dashboard-link">
-            <a href="getecho.html">
-              <i class="icon ph-bold ph-target"></i><br>
-              <span class="text">Send Echo</span>
-              <p>Send Echo via API to server</p>
-            </a>
-          </div>
-        </div>
+        <div id="output2"></div>
       </div>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/script.js"></script>
-    <script src="js/theme-save.js"></script>
-    <script type="text/javascript" src="js/appFunctions.js"></script>
-    <script type="text/javascript" src="./js/status.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="./js/app/menu.js"></script>
+    <script src="./js/app/theme.js"></script>
+    <script type="text/javascript" src="./js/app/app-bar.js"></script>
   </body>
 </html>

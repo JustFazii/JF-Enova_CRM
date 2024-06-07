@@ -1,5 +1,5 @@
-eel.expose(update_output2);
-function update_output2(data) {
+eel.expose(GetContractors);
+function GetContractors(data) {
   document.getElementById("output2").innerHTML = data;
   const search = document.querySelector(".input-group input"),
     table_rows = document.querySelectorAll("tbody tr"),
@@ -380,8 +380,8 @@ function update_output6(data) {
 
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname.endsWith("contractors.html")) {
-    eel.refresh_contractors()(function (data) {
-      update_output2(data);
+    eel.GetContractors()(function (data) {
+      GetContractors(data);
     });
   } else if (window.location.pathname.endsWith("getdocumentsZO.html")) {
     eel.update_output4()(function (data) {
