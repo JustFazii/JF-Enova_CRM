@@ -1,14 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.endsWith("goods.html")) {
-    eel.show_goods()(function (data) {
-      show_goods(data);
-    });
-  }
-});
-
-eel.expose(show_goods);
-function show_goods(data) {
-  document.getElementById("output3").innerHTML = data;
+eel.expose(GetContractors);
+function GetContractors(data) {
+  document.getElementById("APIGetContractors").innerHTML = data;
   const search = document.querySelector(".input-group input"),
     table_rows = document.querySelectorAll("tbody tr"),
     table_headings = document.querySelectorAll("thead th");
@@ -81,3 +73,11 @@ function show_goods(data) {
       );
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname.endsWith("C_Contractors.html")) {
+      eel.GetContractors()(function (data) {
+        GetContractors(data);
+      });
+    }
+  });
