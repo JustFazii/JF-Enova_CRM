@@ -2,7 +2,7 @@
   "name": "jf-enova-electron",
   "version": "1.0.0",
   "description": "JustFazii - Enova-Electron App",
-  "main": "./ui/js/main.js",
+  "main": "./electron/main.js",
   "scripts": {
     "start": "electron ."
   },
