@@ -1,17 +1,16 @@
 import requests
-from functions.env_file import TOKEN_ENOVA, IP
-class APIZDZKInvoice:
+from api.env_file import TOKEN_ENOVA, IP, PORT
+
+class APIGenerateInvoiceZK:
     def __init__(self):
-                self.base_token = TOKEN_ENOVA
+        self.token = TOKEN_ENOVA
 
-
-    def send_request(self, zk):
-        print(zk)
-        login_url = f"http://{IP}:6001/api/LoginApi"
-        add_zk_url = f"http://{IP}:6001/api/ServiceImpApiANS/GenerateInvoice?idDokumentuZO={zk['idDokumentuZO']}&typDokumentu=ZK"
+    def request(self, zk):
+        login_url = f"http://{IP}:{PORT}/api/LoginApi"
+        add_zk_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GenerateInvoice?idDokumentuZD={zk['idDokumentuZD']}&typDokumentu=ZK"
 
         headers = {
-            'Authorization': f'Bearer {self.base_token}',
+            'Authorization': f'Bearer {self.token}',
             'Content-Type': 'application/json'
         }
 
@@ -36,6 +35,8 @@ class APIZDZKInvoice:
             return data
         
         except requests.exceptions.RequestException as e:
-            print(f"Błąd podczas komunikacji z API: {e}")
+            print(f"Error when connecting with API: {e}")
+            return f"Error while communicating with API: {e}"
         except ValueError as ve:
-            print(f"Błąd: {ve}")
+            print(f"Error: {ve}")
+            return f"Error: {ve}"

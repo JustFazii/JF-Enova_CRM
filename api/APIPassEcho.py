@@ -1,16 +1,16 @@
 import requests
-from functions.env_file import TOKEN_ENOVA, IP
-class APIZOFVInvoice:
+from api.env_file import TOKEN_ENOVA, IP, PORT
+
+class APIPassEcho:
     def __init__(self):
-                self.base_token = TOKEN_ENOVA
+        self.token = TOKEN_ENOVA
 
-
-    def send_request(self, fv):
-        login_url = f"http://{IP}:6001/api/LoginApi"
-        add_fv_url = f"http://{IP}:6001/api/ServiceImpApiANS/GenerateInvoice?idDokumentuZO={fv['idDokumentuZO']}&typDokumentu=FV"
+    def request(self, string):
+        login_url = f"http://{IP}:{PORT}/api/LoginApi"
+        echo_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetEcho"
 
         headers = {
-            'Authorization': f'Bearer {self.base_token}',
+            'Authorization': f'Bearer {self.token}',
             'Content-Type': 'application/json'
         }
 
@@ -27,14 +27,18 @@ class APIZOFVInvoice:
                 'Authorization': f'Bearer {session_token}',
                 'Content-Type': 'text/json'
             }
-
-            service_response = requests.post(add_fv_url, headers=service_headers)
+            params = {
+                'value': string
+            }
+            service_response = requests.post(echo_url, headers=service_headers, params=params)
             service_response.raise_for_status()
             data = service_response.json()
-
+            
             return data
         
         except requests.exceptions.RequestException as e:
-            print(f"Błąd podczas komunikacji z API: {e}")
+            print(f"Error when connecting with API: {e}")
+            return f"Error while communicating with API: {e}"
         except ValueError as ve:
-            print(f"Błąd: {ve}")
+            print(f"Error: {ve}")
+            return f"Error: {ve}"

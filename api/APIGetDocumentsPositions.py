@@ -1,16 +1,16 @@
 import requests
-from functions.env_file import TOKEN_ENOVA, IP
-class APIShowHandelDocumentPositions:
+from api.env_file import TOKEN_ENOVA, IP, PORT
+
+class APIGetDocumentsPositions:
     def __init__(self):
-                self.base_token = TOKEN_ENOVA
+        self.token = TOKEN_ENOVA
 
-
-    def send_request(self, param):
-        login_url = f"http://{IP}:6001/api/LoginApi"
-        pos_url = f"http://{IP}:6001/api/ServiceImpApiANS/GetPozycjeDokumentyHandlowe?value={param['value']}"
+    def request(self, param):
+        login_url = f"http://{IP}:{PORT}/api/LoginApi"
+        document_position_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetPozycjeDokumentyHandlowe?value={param['value']}"
 
         headers = {
-            'Authorization': f'Bearer {self.base_token}',
+            'Authorization': f'Bearer {self.token}',
             'Content-Type': 'application/json'
         }
 
@@ -28,7 +28,7 @@ class APIShowHandelDocumentPositions:
                 'Content-Type': 'text/json'
             }
 
-            service_response = requests.post(pos_url, headers=service_headers)
+            service_response = requests.post(document_position_url, headers=service_headers)
             service_response.raise_for_status()
             data = service_response.json()
 
@@ -37,9 +37,11 @@ class APIShowHandelDocumentPositions:
             return html_table
         
         except requests.exceptions.RequestException as e:
-            print(f"Błąd podczas komunikacji z API: {e}")
+            print(f"Error when connecting with API: {e}")
+            return f"Error while communicating with API: {e}"
         except ValueError as ve:
-            print(f"Błąd: {ve}")
+            print(f"Error: {ve}")
+            return f"Error: {ve}"
         
     def format_data(self, data):
         html = "<table class='table-content'><thead><tr><th>Kod Towaru <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Ilosc <span class='icon-arrow'>&uparrow;</span></th><th>Cena <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"

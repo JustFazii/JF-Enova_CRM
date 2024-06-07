@@ -1,16 +1,16 @@
 import requests
-from tabulate import tabulate
-from functions.env_file import TOKEN_ENOVA, IP
-class APIGetInvoices:
-    def __init__(self):
-                self.base_token = TOKEN_ENOVA
+from api.env_file import TOKEN_ENOVA, IP, PORT
 
-    def send_request(self, param):
-        login_url = f"http://{IP}:6001/api/LoginApi"
-        service_url = f"http://{IP}:6001/api/ServiceImpApiANS/GetFaktury"
+class APIGetZODocuments:
+    def __init__(self):
+        self.token = TOKEN_ENOVA
+
+    def request(self, param):
+        login_url = f"http://{IP}:{PORT}/api/LoginApi"
+        zo_documents_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetDokumentyHandloweZO"
 
         headers = {
-            'Authorization': f'Bearer {self.base_token}',
+            'Authorization': f'Bearer {self.token}',
             'Content-Type': 'application/json'
         }
 
@@ -21,7 +21,7 @@ class APIGetInvoices:
             session_token = login_data.get('Token')
 
             if not session_token:
-                raise ValueError("Nie udało się uzyskać tokenu sesji")
+                raise ValueError("Unable to access Session Token")
 
             service_headers = {
                 'Authorization': f'Bearer {session_token}',
@@ -30,17 +30,21 @@ class APIGetInvoices:
             service_payload = {
                 'param': param
             }
-            service_response = requests.post(service_url, headers=service_headers, json=service_payload)
+            
+            service_response = requests.post(zo_documents_url, headers=service_headers, json=service_payload)
             service_response.raise_for_status()
+                        
             data = service_response.json()
             html_table = self.format_data(data)
             
             return html_table
             
         except requests.exceptions.RequestException as e:
-            print(f"Błąd podczas komunikacji z API: {e}")
+            print(f"Error when connecting with API: {e}")
+            return f"Error while communicating with API: {e}"
         except ValueError as ve:
-            print(f"Błąd: {ve}")
+            print(f"Error: {ve}")
+            return f"Error: {ve}"
             
     def format_data(self, data):
         html = "<table class='table-content'><thead><tr><th>ID <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Definicja <span class='icon-arrow'>&uparrow;</span></th><th>Data <span class='icon-arrow'>&uparrow;</span></th><th>Kontrahent <span class='icon-arrow'>&uparrow;</span></th><th>Numer Dokumentu <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"

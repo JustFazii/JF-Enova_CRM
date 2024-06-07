@@ -1,15 +1,16 @@
 import requests
-from functions.env_file import TOKEN_ENOVA, IP
-class APIGetEcho:
-    def __init__(self):
-                self.base_token = TOKEN_ENOVA
+from api.env_file import TOKEN_ENOVA, IP, PORT
 
-    def send_request(self, param):
-        login_url = f"http://{IP}:6001/api/LoginApi"
-        service_url = f"http://{IP}:6001/api/ServiceImpApiANS/GetEcho"
+class APIGetContractorByID:
+    def __init__(self):
+        self.token = TOKEN_ENOVA
+
+    def request(self, id):
+        login_url = f"http://{IP}:{PORT}/api/LoginApi"
+        service_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetContractorByID?id={id}"
 
         headers = {
-            'Authorization': f'Bearer {self.base_token}',
+            'Authorization': f'Bearer {self.token}',
             'Content-Type': 'application/json'
         }
 
@@ -20,22 +21,27 @@ class APIGetEcho:
             session_token = login_data.get('Token')
 
             if not session_token:
-                raise ValueError("Nie udało się uzyskać tokenu sesji")
+                raise ValueError("Unable to access Session Token")
 
             service_headers = {
                 'Authorization': f'Bearer {session_token}',
-                'Content-Type': 'text/json'
+                'accept': 'application/json'
             }
+            
             params = {
-                'value': param
+            'id': id
             }
+            
             service_response = requests.post(service_url, headers=service_headers, params=params)
             service_response.raise_for_status()
+            
             data = service_response.json()
             
             return data
-        
+            
         except requests.exceptions.RequestException as e:
-            return f"Błąd podczas komunikacji z API: {e}"
+            print(f"Error when connecting with API: {e}")
+            return f"Error while communicating with API: {e}"
         except ValueError as ve:
-            return f"Błąd: {ve}"
+            print(f"Error: {ve}")
+            return f"Error: {ve}"
