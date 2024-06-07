@@ -5,9 +5,9 @@ class APIGetZDDocuments:
     def __init__(self):
         self.token = TOKEN_ENOVA
 
-    def request(self, param):
+    def request(self):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        zd_documents_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetDokumentyHandloweZD"
+        zd_documents_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetZDDocuments"
 
         headers = {
             'Authorization': f'Bearer {self.token}',
@@ -27,11 +27,8 @@ class APIGetZDDocuments:
                 'Authorization': f'Bearer {session_token}',
                 'Content-Type': 'application/json'
             }
-            service_payload = {
-                'param': param
-            }
             
-            service_response = requests.post(zd_documents_url, headers=service_headers, json=service_payload)
+            service_response = requests.post(zd_documents_url, headers=service_headers)
             service_response.raise_for_status()
                         
             data = service_response.json()

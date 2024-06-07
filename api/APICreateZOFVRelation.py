@@ -7,7 +7,7 @@ class APICreateZOFVRelation:
 
     def request(self, zofv):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        zofv_relation_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/TworzenieRelacjiZOFV?idDokumentuZO={zofv['idDokumentuZO']}"
+        zofv_relation_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/CreateZOFVRelation?idDokumentuZO={zofv['idDokumentuZO']}"
 
         headers = {
             'Authorization': f'Bearer {self.token}',

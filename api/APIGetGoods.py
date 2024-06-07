@@ -7,7 +7,7 @@ class APIGetGoods:
 
     def request(self):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        goods_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetTowary"
+        goods_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetGoods"
 
         headers = {
             'Authorization': f'Bearer {self.token}',

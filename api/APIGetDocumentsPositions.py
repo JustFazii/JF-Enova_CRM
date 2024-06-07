@@ -7,7 +7,7 @@ class APIGetDocumentsPositions:
 
     def request(self, param):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        document_position_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetPozycjeDokumentyHandlowe?value={param['value']}"
+        document_position_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetDocumentsPositions?value={param['value']}"
 
         headers = {
             'Authorization': f'Bearer {self.token}',

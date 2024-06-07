@@ -7,7 +7,7 @@ class APIAddContractor:
 
     def request(self, data):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        add_contractor_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/AddKontrahent"
+        add_contractor_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/AddContractor"
 
         headers = {
             'Authorization': f'Bearer {self.token}',

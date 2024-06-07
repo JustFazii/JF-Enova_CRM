@@ -7,7 +7,7 @@ class APIPassEcho:
 
     def request(self, string):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        echo_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetEcho"
+        echo_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/PassEcho"
 
         headers = {
             'Authorization': f'Bearer {self.token}',

@@ -7,7 +7,7 @@ class APICreateZDZKRelation:
 
     def request(self, zdzk):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        zdzk_relation_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/TworzenieRelacjiZDZK?idDokumentuZO={zdzk['idDokumentuZD']}"
+        zdzk_relation_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/CreateZDZKRelation?idDokumentuZO={zdzk['idDokumentuZD']}"
 
         headers = {
             'Authorization': f'Bearer {self.token}',

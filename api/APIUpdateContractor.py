@@ -7,7 +7,7 @@ class APIUpdateContractor:
 
     def request(self, data):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        add_kontrahent_url = f"http://{IP}:{PORT}:6001/api/ServiceImpApiANS/UpdateKontrahent"
+        add_kontrahent_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/UpdateContractor"
 
         headers = {
             'Authorization': f'Bearer {self.token}',

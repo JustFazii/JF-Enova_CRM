@@ -7,7 +7,7 @@ class APIGetInvoices:
 
     def request(self):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
-        service_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetFaktury"
+        service_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetInvoices"
 
         headers = {
             'Authorization': f'Bearer {self.token}',
