@@ -1,6 +1,6 @@
-eel.expose(update_output4);
-function update_output4(data) {
-  document.getElementById("output4").innerHTML = data;
+eel.expose(GetZODocuments);
+function GetZODocuments(data) {
+  document.getElementById("APIGetZODocuments").innerHTML = data;
   const search = document.querySelector(".input-group input"),
     table_rows = document.querySelectorAll("tbody tr"),
     table_headings = document.querySelectorAll("thead th");
@@ -74,29 +74,10 @@ function update_output4(data) {
   }
 }
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.endsWith("getdocumentsZO.html")) {
-    eel.update_output4()(function (data) {
-      update_output4(data);
-    });
-  } else if (window.location.pathname.endsWith("getdocumentsZD.html")) {
-    eel.update_output5()(function (data) {
-      update_output5(data);
+    if (window.location.pathname.endsWith("D_GetZODocuments.html")) {
+      eel.GetZODocuments()(function (data) {
+        GetZODocuments(data);
     });
   }
 });
-
-
-if (localStorage.getItem("theme") === "dark") {
-  document.documentElement.classList.add("dark-theme");
-}
-
-document.onkeydown = (e) => {
-  if (e.ctrlKey && e.shiftKey && e.key == "I") {
-    e.preventDefault();
-  }
-};
