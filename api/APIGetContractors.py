@@ -44,7 +44,7 @@ class APIGetContractors:
             return f"Error: {ve}"
         
     def format_data(self, data):
-        html = "<table class='table-content'><thead><tr><th>ID <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Code <span class='icon-arrow'>&uparrow;</span></th><th>Name <span class='icon-arrow'>&uparrow;</span></th><th>NIP <span class='icon-arrow'>&uparrow;</span></th><th>Address <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
+        html = "<table class='table-content'><thead><tr><th>ID <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Code <span class='icon-arrow'>&uparrow;</span></th><th>Name <span class='icon-arrow'>&uparrow;</span></th><th>NIP <span class='icon-arrow'>&uparrow;</span></th><th>Address <span class='icon-arrow'>&uparrow;</span></th><th>Options</th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
@@ -54,6 +54,7 @@ class APIGetContractors:
                 f"<td class='{cls}'>{item['Nazwa']}</td>"
                 f"<td class='{cls}'>{item['NIP']}</td>"
                 f"<td class='{cls}'>{item['Adres']}</td>"
+                f"<td class='{cls}'><div class='Buttons'><Button class='ShowPosButton' value={item['ID']} title='Show documents positions'><i class='icon ph-bold ph-user-gear'></i></Button></div></td>"
                 f"</tr>"
             )
         html += "</table>"

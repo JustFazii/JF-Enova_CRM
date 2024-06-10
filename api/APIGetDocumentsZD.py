@@ -34,10 +34,6 @@ class APIGetZDDocuments:
             data = service_response.json()
             html_table = self.format_data(data)
             
-            print(data)
-            
-            print(html_table)
-            
             return html_table
             
         except requests.exceptions.RequestException as e:
@@ -48,7 +44,7 @@ class APIGetZDDocuments:
             return f"Error: {ve}"
             
     def format_data(self, data):
-        html = "<table class='table-content'><thead><tr><th>ID<span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Definition<span class='icon-arrow'>&uparrow;</span></th><th>Date<span class='icon-arrow'>&uparrow;</span></th><th>Contractor<span class='icon-arrow'>&uparrow;</span></th><th>Document Number<span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
+        html = "<table class='table-content'><thead><tr><th>ID<span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Definition<span class='icon-arrow'>&uparrow;</span></th><th>Date<span class='icon-arrow'>&uparrow;</span></th><th>Contractor<span class='icon-arrow'>&uparrow;</span></th><th>Document Number<span class='icon-arrow'>&uparrow;</span></th><th>Options</th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
@@ -58,6 +54,7 @@ class APIGetZDDocuments:
                 f"<td class='{cls}'>{item['Data']}</td>"
                 f"<td class='{cls}'>{item['Kontrahent']}</td>"
                 f"<td class='{cls}'>{item['NumerDokumentu']}</td>"
+                f"<td class='{cls}'><div class='Buttons'><Button class='ShowPosButton' value={item['ID']} title='Show documents positions'><i class='icon ph-bold ph-file-lock'></i></Button><Button class='ShowPosButton' value={item['ID']} title='Add relation with ZK document'><i class='icon ph-bold ph-folder-lock'></i></Button></div></td>"
                 f"</tr>"
             )
         html += "</table>"
