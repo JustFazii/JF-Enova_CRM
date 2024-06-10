@@ -1,12 +1,12 @@
-document.getElementById('submit-btn').addEventListener('click', function(event) {
+document.getElementById('APIPassEchoButton').addEventListener('click', function(event) {
   event.preventDefault();
   const input = document.getElementById('input-box').value;
-  eel.send_echo(input)(function(response) {
-      document.getElementById('get-echo').innerHTML = response;
+  eel.PassEcho(input)(function(response) {
+      document.getElementById('APIPassEcho').innerHTML = response;
   });
 });
 
-eel.expose(update_output);
-function update_output(data) {
-  document.getElementById('get-echo').innerHTML = data;
+eel.expose(PassEcho);
+function PassEcho(data) {
+  document.getElementById('APIPassEcho').innerHTML = data;
 }

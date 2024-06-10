@@ -34,6 +34,8 @@ class APIPassEcho:
             service_response.raise_for_status()
             data = service_response.json()
             
+            print(data)
+            
             return data
         
         except requests.exceptions.RequestException as e:
