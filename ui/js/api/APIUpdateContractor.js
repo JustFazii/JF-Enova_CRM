@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 event.preventDefault();
                 const input = button.value;
                 eel.GetContractorByID(input)(function(response) {
-                    console.log('Received data:', response);  // Debugging line
                     localStorage.setItem('contractorData', JSON.stringify(response));
-                    console.log('Stored data in localStorage:', localStorage.getItem('contractorData'));  // Debugging line
                     window.location.href = 'C_UpdateContractor.html';
                 });
             });

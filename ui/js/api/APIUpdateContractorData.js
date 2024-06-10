@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('code').value = contractorData.Kod || '';
         document.getElementById('name').value = contractorData.Nazwa || '';
         document.getElementById('nip').value = contractorData.NIP || '';
+        document.getElementById('adres').value = contractorData.Adres || '';
         document.getElementById('podvat').value = contractorData.PodatnikVat || '';
         document.getElementById('rodzvatsp').value = contractorData.RodzajVatSprzedaz || '';
         document.getElementById('rodzvatzk').value = contractorData.RodzajVatZakupu || '';
-        console.log('Status value:', contractorData.Status);
         document.getElementById('st-input').value = contractorData.Status || '';
         document.getElementById('vatod').value = contractorData.VatOd || '';
         document.getElementById('ulica').value = contractorData.Ulica || '';
