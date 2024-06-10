@@ -1,0 +1,24 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const contractorDataArray = JSON.parse(localStorage.getItem('contractorData'));
+    console.log('Loaded data from localStorage:', contractorDataArray);
+    if (contractorDataArray && contractorDataArray.length > 0) {
+        const contractorData = contractorDataArray[0];
+        document.getElementById('code').value = contractorData.Kod || '';
+        document.getElementById('name').value = contractorData.Nazwa || '';
+        document.getElementById('nip').value = contractorData.NIP || '';
+        document.getElementById('podvat').value = contractorData.PodatnikVat || '';
+        document.getElementById('rodzvatsp').value = contractorData.RodzajVatSprzedaz || '';
+        document.getElementById('rodzvatzk').value = contractorData.RodzajVatZakupu || '';
+        console.log('Status value:', contractorData.Status);
+        document.getElementById('st-input').value = contractorData.Status || '';
+        document.getElementById('vatod').value = contractorData.VatOd || '';
+        document.getElementById('ulica').value = contractorData.Ulica || '';
+        document.getElementById('nrdomu').value = contractorData.NrDomu || '';
+        document.getElementById('kodpoczt').value = contractorData.KodPoczt || '';
+        document.getElementById('poczta').value = contractorData.Poczta || '';
+        document.getElementById('woj').value = contractorData.Woj || '';
+        document.getElementById('miasto').value = contractorData.Miasto || '';
+        document.getElementById('kraj').value = contractorData.Kraj || '';
+    }
+});
+

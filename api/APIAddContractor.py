@@ -28,7 +28,6 @@ class APIAddContractor:
                 'Content-Type': 'application/json'
             }
             kontrahent_data = {
-                "ID": data['ID'],
                 "Kod": data['Kod'],
                 "Nazwa": data['Nazwa'],
                 "NIP": data['NIP'],
