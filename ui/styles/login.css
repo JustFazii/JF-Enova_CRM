@@ -112,7 +112,7 @@
 }
 
 .main-window{
-    height: 100vh;
+    height: calc(100vh - 30px);
     background: #f6f5f7;
     display: grid;
     place-content: center;

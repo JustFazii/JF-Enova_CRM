@@ -26,10 +26,6 @@ maxResBtn.addEventListener('click', () => {
     ipc.send('maximizeApp');
 });
 
-exitBtn.addEventListener('click', () => {
-    ipc.send('closeApp');
-})
-
 closeBtn.addEventListener('click', () => {
     ipc.send('closeApp');
 });

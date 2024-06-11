@@ -22,63 +22,53 @@
         </div>
     </div>
     <div class="main-window">
-    <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Customize your experience in app</h1>
-                <div class="infield">
-                    <input type="text" placeholder="IP Address" />
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input type="text" placeholder="Port"/>
-                    <label></label>
-                </div>
-                <button class="lg-button">Save</button>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Sign in</h1>
-                <div class="infield">
-                    <input type="password" placeholder="Token"/>
-                    <label></label>
-                </div>
-                <button class="lg-button">Sign In</button>
-            </form>
-        </div>
-        <div class="overlay-container" id="overlayCon">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome!</h1>
-                    <p>To be sure connection will work, you need to provide this options.</p>
-                    <button class="lg-button">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Enova UI</h1>
-                    <p>Enter your token to get access to UI build in Python</p>
-                    <button class="lg-button">Settings</button>
-                </div>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Customize your experience in app</h1>
+                    <div class="infield">
+                        <input type="text" placeholder="IP Address" />
+                        <label></label>
+                    </div>
+                    <div class="infield">
+                        <input type="text" placeholder="Port"/>
+                        <label></label>
+                    </div>
+                    <button class="lg-button">Save</button>
+                </form>
             </div>
-            <button id="overlayBtn"></button>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Sign in</h1>
+                    <div class="infield">
+                        <input type="password" placeholder="Token"/>
+                        <label></label>
+                    </div>
+                    <button class="lg-button">Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container" id="overlayCon">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome!</h1>
+                        <p>To be sure connection will work, you need to provide this options.</p>
+                        <button class="lg-button">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Enova UI</h1>
+                        <p>Enter your token to get access to UI build in Python</p>
+                        <button class="lg-button">Settings</button>
+                    </div>
+                </div>
+                <button class="lg-button" id="overlayBtn"></button>
+            </div>
         </div>
     </div>
-</div>   
-    <!-- js code -->
-    <script>
-        const container = document.getElementById('container');
-        const overlayCon = document.getElementById('overlayCon');
-        const overlayBtn = document.getElementById('overlayBtn');
+<!-- Functions Site -->
+<script src="./js/app/app-bar.js"></script>
+<script src="./js/app/login.js"></script>
+<!-- Functions API -->
 
-        overlayBtn.addEventListener('click', () => {
-            container.classList.toggle('right-panel-active')
-
-            overlayBtn.classList.remove('btnScaled');
-            window.requestAnimationFrame( ()=> {
-                overlayBtn.classList.add('btnScaled');
-            })
-        })
-    </script>
 
 </body>
 </html>
