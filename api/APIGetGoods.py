@@ -43,11 +43,12 @@ class APIGetGoods:
             return f"Error: {ve}"
 
     def format_data(self, data):
-        html = "<table class='table-content'><thead><tr><th class='active asc'>Code <span class='icon-arrow'>&uparrow;</span></th><th>Name <span class='icon-arrow'>&uparrow;</span></th><th>Price <span class='icon-arrow'>&uparrow;</span></th><th>Availability <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
+        html = "<table class='table-content'><thead><tr><th>ID<span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Code<span class='icon-arrow'>&uparrow;</span></th><th>Name<span class='icon-arrow'>&uparrow;</span></th><th>Price<span class='icon-arrow'>&uparrow;</span></th><th>Availability<span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
                 f"<tr>"
+                f"<td class='{cls}'>{item['ID']}</td>"
                 f"<td class='{cls} active'>{item['Kod']}</td>"
                 f"<td class='{cls}'>{item['Nazwa']}</td>"
                 f"<td class='{cls}'>{str(item['Cena']) + ' ' + item['Waluta']}</td>"

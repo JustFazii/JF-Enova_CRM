@@ -24,8 +24,8 @@ document.getElementById('submit-btn-up').addEventListener('click', function(even
   eel.UpdateContractor(contractorData)(function(data) {
     document.getElementById('get-contup-response').innerText = data;
 
-    // setTimeout(function() {
-    //   window.location.href = 'C_Contractors.html';
-    // }, 3000);
+    setTimeout(function() {
+      window.location.href = 'C_Contractors.html';
+    }, 3000);
   });
 });

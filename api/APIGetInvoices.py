@@ -43,16 +43,18 @@ class APIGetInvoices:
             return f"Error: {ve}"
             
     def format_data(self, data):
-        html = "<table class='table-content'><thead><tr><th>ID<span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Definition<span class='icon-arrow'>&uparrow;</span></th><th>Date <span class='icon-arrow'>&uparrow;</span></th><th>Contractor<span class='icon-arrow'>&uparrow;</span></th><th>Document Number <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
+        html = "<table class='table-content'><thead><tr><th>ID<span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Definition<span class='icon-arrow'>&uparrow;</span></th><th>Document Nr.<span class='icon-arrow'>&uparrow;</span></th><th>Date<span class='icon-arrow'>&uparrow;</span></th><th>Contractor ID<span class='icon-arrow'>&uparrow;</span></th><th>Contractor<span class='icon-arrow'>&uparrow;</span></th><th>Value<span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
                 f"<tr>"
                 f"<td class='{cls}'>{item['ID']}</td>"
                 f"<td class='{cls} active'>{item['DefinicjaSymbol']}</td>"
-                f"<td class='{cls}'>{item['Data']}</td>"
-                f"<td class='{cls}'>{item['Kontrahent']}</td>"
                 f"<td class='{cls}'>{item['NumerDokumentu']}</td>"
+                f"<td class='{cls}'>{item['DataDok']}</td>"
+                f"<td class='{cls}'>{item['KontrahentID']}</td>"
+                f"<td class='{cls}'>{item['KontrahentNazwa']}</td>"
+                f"<td class='{cls}'>{item['WartoscBrutto']}</td>"
                 f"</tr>"
             )
         html += "</table>"
