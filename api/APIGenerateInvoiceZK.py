@@ -1,13 +1,15 @@
 import requests
-from app.env_file import IP, PORT, SESSION_TOKEN
+from app.env_file import IP, PORT
+from app.get_token import get_session_token
 
 class APIGenerateInvoiceZK:
     def request(self, zk):
         add_zk_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GenerateInvoice?idDokumentuZD={zk['idDokumentuZD']}&typDokumentu=ZK"
+        session_token = get_session_token()
 
         try:
             service_headers = {
-                'Authorization': f'Bearer {SESSION_TOKEN}',
+                'Authorization': f'Bearer {session_token}',
                 'Content-Type': 'text/json'
             }
 

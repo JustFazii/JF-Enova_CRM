@@ -1,13 +1,15 @@
 import requests
-from app.env_file import IP, PORT, SESSION_TOKEN
+from app.env_file import IP, PORT
+from app.get_token import get_session_token
 
 class APIGetContractorByID:
     def request(self, id):
         service_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetContractorByID?id={id}"
+        session_token = get_session_token()
 
         try:
             service_headers = {
-                'Authorization': f'Bearer {SESSION_TOKEN}',
+                'Authorization': f'Bearer {session_token}',
                 'accept': 'application/json'
             }
             

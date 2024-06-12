@@ -1,13 +1,15 @@
 import requests
-from app.env_file import IP, PORT, SESSION_TOKEN
+from app.env_file import IP, PORT
+from app.get_token import get_session_token
 
 class APIGetDocumentsPositions:
     def request(self, param):
         document_position_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetDocumentsPositions?value={param['value']}"
-
+        session_token = get_session_token()
+        
         try:
             service_headers = {
-                'Authorization': f'Bearer {SESSION_TOKEN}',
+                'Authorization': f'Bearer {session_token}',
                 'Content-Type': 'text/json'
             }
 

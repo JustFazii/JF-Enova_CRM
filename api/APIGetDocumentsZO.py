@@ -1,13 +1,15 @@
 import requests
-from app.env_file import IP, PORT, SESSION_TOKEN
+from app.env_file import IP, PORT
+from app.get_token import get_session_token
 
 class APIGetZODocuments:
     def request(self):
         zo_documents_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetZODocuments"
+        session_token = get_session_token()
 
         try:
             service_headers = {
-                'Authorization': f'Bearer {SESSION_TOKEN}',
+                'Authorization': f'Bearer {session_token}',
                 'Content-Type': 'application/json'
             }
             

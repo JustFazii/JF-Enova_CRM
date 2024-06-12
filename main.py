@@ -57,7 +57,7 @@ def Login(token):
 def Logout():
     print("Called APILogout")
     API = APILogout()
-    result = API.request(SESSION_TOKEN)
+    result = API.request()
     print("Returning APILogout")
     return result
 
