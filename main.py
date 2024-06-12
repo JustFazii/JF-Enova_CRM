@@ -1,4 +1,7 @@
 import eel
+from app.APPSetSettings import APPSetSettings
+from app.env_file import SESSION_TOKEN
+from app.APPGetSettings import APPGetSettings
 from api.APILogin import APILogin
 from api.APILogout import APILogout
 from api.APIStatus import APIStatus
@@ -18,6 +21,22 @@ from api.APIGetInvoices import APIGetInvoices
 from api.APIPassEcho import APIPassEcho
 
 @eel.expose
+def GetSettings():
+    print("Called APPGetSettings")
+    APP = APPGetSettings()
+    result = APP.getsettings()
+    print("Returning APPGetSettings")
+    return result
+
+@eel.expose
+def SetSettings(ip, port):
+    print("Called APPSetSettings")
+    APP = APPSetSettings()
+    result = APP.setsettings(ip, port)
+    print("Returning APPSetSettings")
+    return result
+
+@eel.expose
 def Login(token):
     print("Called APILogin")
     API = APILogin()
@@ -26,10 +45,10 @@ def Login(token):
     return result
 
 @eel.expose
-def Logout(session_token):
+def Logout():
     print("Called APILogout")
     API = APILogout()
-    result = API.request(session_token)
+    result = API.request(SESSION_TOKEN)
     print("Returning APILogout")
     return result
 

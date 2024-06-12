@@ -10,3 +10,15 @@ $(".menu > ul > li").click(function (e) {
 $(".menu-btn").click(function () {
   $(".sidebar").toggleClass("active");
 });
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", () => {
+  eel.Logout()(function(result) {
+    if (result && typeof result === 'string' && result.startsWith('Error')) {
+      alert('Logout failed: ' + result);
+    } else {
+      window.location.href = 'M_Login.html';
+    }
+  });
+});
