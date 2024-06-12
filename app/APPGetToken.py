@@ -1,4 +1,4 @@
-def get_session_token():
+def GetSessionToken():
     with open('app/env_file.py', 'r') as file:
         for line in file:
             if line.startswith('SESSION_TOKEN'):

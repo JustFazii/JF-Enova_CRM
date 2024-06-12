@@ -1,11 +1,11 @@
 import requests
 from app.env_file import IP, PORT
-from app.get_token import get_session_token
+from app.APPGetToken import GetSessionToken
 
 class APIGetInvoices:
     def request(self):
         service_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetInvoices"
-        session_token = get_session_token()
+        session_token = GetSessionToken()
 
         try:
             service_headers = {

@@ -1,7 +1,7 @@
 # utils.py
 import re
 
-def save_tokens(user_token, session_token):
+def SaveTokens(user_token, session_token):
     env_file = 'app/env_file.py'
     
     with open(env_file, 'r') as file:

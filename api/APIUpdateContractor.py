@@ -1,11 +1,11 @@
 import requests
 from app.env_file import IP, PORT
-from app.get_token import get_session_token
+from app.APPGetToken import GetSessionToken
 
 class APIUpdateContractor:
     def request(self, data):
         add_kontrahent_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/UpdateContractor"
-        session_token = get_session_token()
+        session_token = GetSessionToken()
 
         try:
             service_headers = {

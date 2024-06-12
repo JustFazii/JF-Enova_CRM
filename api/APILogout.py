@@ -1,11 +1,11 @@
 import requests
 from app.env_file import IP, PORT
-from app.get_token import get_session_token
+from app.APPGetToken import GetSessionToken
 
 class APILogout:
     def request(self):
         logout_url = f"http://{IP}:{PORT}/api/LogoutApi"
-        session_token = get_session_token()
+        session_token = GetSessionToken()
 
         headers = {
             'Authorization': f'Bearer {session_token}',

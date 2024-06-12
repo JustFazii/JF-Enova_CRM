@@ -1,6 +1,6 @@
 import requests
 from app.env_file import IP, PORT
-from app.save_token import save_tokens
+from app.APPSaveToken import SaveTokens
 
 class APILogin:
     def request(self, user_token):
@@ -20,7 +20,7 @@ class APILogin:
             if not session_token:
                 raise ValueError("Nie udało się uzyskać tokenu sesji")
 
-            save_tokens(user_token, session_token)
+            SaveTokens(user_token, session_token)
 
             return session_token
         

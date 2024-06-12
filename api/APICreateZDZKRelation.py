@@ -1,11 +1,11 @@
 import requests
 from app.env_file import IP, PORT
-from app.get_token import get_session_token
+from app.APPGetToken import GetSessionToken
 
 class APICreateZDZKRelation:
     def request(self, zdzk):
         zdzk_relation_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/CreateZDZKRelation?idDokumentuZO={zdzk['idDokumentuZD']}"
-        session_token = get_session_token()
+        session_token = GetSessionToken()
 
         try:
             service_headers = {

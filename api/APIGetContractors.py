@@ -1,11 +1,11 @@
 import requests
-from app.env_file import IP, PORT, SESSION_TOKEN
-from app.get_token import get_session_token
+from app.env_file import IP, PORT
+from app.APPGetToken import GetSessionToken
 
 class APIGetContractors:
     def request(self):
         service_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetContractors"
-        session_token = get_session_token()
+        session_token = GetSessionToken()
         
         try:
             service_headers = {
