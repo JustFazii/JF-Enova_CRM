@@ -74,7 +74,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="C_UpdateContractor.html">
+                    <a href="C_UpdateContractorRaw.html">
                       <i class="icon ph-bold ph-user-gear"></i>
                       <span class="text">Update Contractor</span>
                     </a>
@@ -120,6 +120,12 @@
                   <span class="text">Goods</span>
                 </a>
               </li>
+              <li>
+                <a href="S_PassEcho.html">
+                  <i class="icon ph-bold ph-tote"></i>
+                  <span class="text">PassEcho</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -145,9 +151,15 @@
               </a>
             </li>
             <li>
-              <a href="#" id="exitBtn">
+              <a href="#" id="refresh-token">
+                <i class="icon ph-bold ph-arrows-clockwise"></i>
+                <span class="text">Refresh Token: <span id="timer">05:00</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="logoutBtn">
                 <i class="icon ph-bold ph-sign-out"></i>
-                <span class="text">Exit</span>
+                <span class="text">Logout</span>
               </a>
             </li>
           </ul>
@@ -195,4 +207,5 @@
   <script src="./js/app/app-bar.js"></script>
   <!-- Functions API -->
   <script src="./js/api/APIGetZODocuments.js"></script>
+  <script src="./js/api/APIRefreshToken.js"></script>
 </html>

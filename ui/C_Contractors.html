@@ -57,8 +57,8 @@
                   <i class="icon ph-bold ph-address-book"></i>
                   <span class="text">Contractors</span>
                   <i class="arrow ph-bold ph-caret-down"></i>
-                </a>
-                <ul class="sub-menu">
+              </a>
+              <ul class="sub-menu">
                   <li>
                     <a href="C_Contractors.html">
                       <i class="icon ph-bold ph-address-book"></i>
@@ -72,12 +72,12 @@
                     </a>
                   </li>
                   <li>
-                    <a href="C_UpdateContractor.html">
+                    <a href="C_UpdateContractorRaw.html">
                       <i class="icon ph-bold ph-user-gear"></i>
                       <span class="text">Update Contractor</span>
                     </a>
                   </li>
-                </ul>
+              </ul>
               </li>
               <li>
                 <a href="#">
@@ -85,37 +85,43 @@
                   <span class="text">Documents</span>
                   <i class="arrow ph-bold ph-caret-down"></i>
                 </a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="D_GetInvoices.html">
-                      <i class="icon ph-bold ph-folder-lock"></i>
-                      <span class="text">Invoices</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="D_GetZODocuments.html">
-                      <i class="icon ph-bold ph-file-lock"></i>
-                      <span class="text">Documents ZO</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="D_GetZDDocuments.html">
-                      <i class="icon ph-bold ph-file-lock"></i>
-                      <span class="text">Documents ZD</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="D_GetDocumentsPositions.html">
-                      <i class="icon ph-bold ph-file-archive"></i>
-                      <span class="text">Documents Postitions</span>
-                    </a>
-                  </li>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="D_GetInvoices.html">
+                        <i class="icon ph-bold ph-folder-lock"></i>
+                        <span class="text">Invoices</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="D_GetZODocuments.html">
+                        <i class="icon ph-bold ph-file-lock"></i>
+                        <span class="text">Documents ZO</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="D_GetZDDocuments.html">
+                        <i class="icon ph-bold ph-file-lock"></i>
+                        <span class="text">Documents ZD</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="D_GetDocumentsPositions.html">
+                        <i class="icon ph-bold ph-file-archive"></i>
+                        <span class="text">Documents Postitions</span>
+                      </a>
+                    </li>
                 </ul>
               </li>
               <li>
                 <a href="G_Goods.html">
                   <i class="icon ph-bold ph-tote"></i>
                   <span class="text">Goods</span>
+                </a>
+              </li>
+              <li>
+                <a href="S_PassEcho.html">
+                  <i class="icon ph-bold ph-tote"></i>
+                  <span class="text">PassEcho</span>
                 </a>
               </li>
             </ul>
@@ -125,13 +131,13 @@
           <p class="title">Control Panel</p>
           <ul>
             <li>
-              <a style="cursor: default">
+              <a style="cursor: default;">
                 <i class="icon ph-bold ph-webhooks-logo"></i>
                 <span class="text" id="status"></span>
               </a>
             </li>
             <li>
-              <a href="#" id="theme" style="cursor: pointer">
+              <a href="#" id="theme" style="cursor: pointer;">
                 <i class="icon ph-bold ph-paint-roller"></i>
                 <span class="text">Change Theme</span>
               </a>
@@ -143,9 +149,15 @@
               </a>
             </li>
             <li>
-              <a href="#" id="exitBtn">
+              <a href="#" id="refresh-token">
+                <i class="icon ph-bold ph-arrows-clockwise"></i>
+                <span class="text">Refresh Token: <span id="timer">05:00</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="logoutBtn">
                 <i class="icon ph-bold ph-sign-out"></i>
-                <span class="text">Exit</span>
+                <span class="text">Logout</span>
               </a>
             </li>
           </ul>
@@ -198,4 +210,5 @@
   <script src="./js/app/app-bar.js"></script>
   <!-- Functions API -->
   <script src="./js/api/APIUpdateContractor.js"></script>
+  <script src="./js/api/APIRefreshToken.js"></script>
 </html>

@@ -1,6 +1,7 @@
 import eel
+from app.env_file import SESSION_TOKEN, USER_TOKEN
+from api.APIRefreshToken import APIRefreshToken
 from app.APPSetSettings import APPSetSettings
-from app.env_file import SESSION_TOKEN
 from app.APPGetSettings import APPGetSettings
 from api.APILogin import APILogin
 from api.APILogout import APILogout
@@ -34,6 +35,14 @@ def SetSettings(ip, port):
     APP = APPSetSettings()
     result = APP.setsettings(ip, port)
     print("Returning APPSetSettings")
+    return result
+
+@eel.expose
+def RefreshToken():
+    print("Called APIRefreshToken")
+    API = APIRefreshToken()
+    result = API.request(USER_TOKEN)
+    print("Returning APIRefreshToken")
     return result
 
 @eel.expose
