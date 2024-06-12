@@ -1,15 +1,12 @@
 import requests
-from api.env_file import IP, PORT
+from app.env_file import IP, PORT
 
 class APILogout:
-    def __init__(self, session_token):
-        self.token = session_token
-
-    def request(self):
+    def request(self, session_token):
         logout_url = f"http://{IP}:{PORT}/api/LogoutApi"
 
         headers = {
-            'Authorization': f'Bearer {self.token}',
+            'Authorization': f'Bearer {session_token}',
             'Content-Type': 'application/json'
         }
 

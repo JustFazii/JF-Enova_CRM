@@ -1,30 +1,13 @@
 import requests
-from api.env_file import TOKEN_ENOVA, IP, PORT
+from app.env_file import IP, PORT, SESSION_TOKEN
 
 class APIGetGoods:
-    def __init__(self):
-        self.token = TOKEN_ENOVA
-
     def request(self):
-        login_url = f"http://{IP}:{PORT}/api/LoginApi"
         goods_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetGoods"
 
-        headers = {
-            'Authorization': f'Bearer {self.token}',
-            'Content-Type': 'application/json'
-        }
-
         try:
-            response = requests.post(login_url, headers=headers)
-            response.raise_for_status()
-            login_data = response.json()
-            session_token = login_data.get('Token')
-
-            if not session_token:
-                raise ValueError("Nie udało się uzyskać tokenu sesji")
-
             service_headers = {
-                'Authorization': f'Bearer {session_token}',
+                'Authorization': f'Bearer {SESSION_TOKEN}',
                 'Content-Type': 'application/json'
             }
 

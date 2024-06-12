@@ -1,15 +1,13 @@
 import requests
-from api.env_file import IP, PORT
+from app.env_file import IP, PORT
+from app.save_token import save_tokens
 
 class APILogin:
-    def __init__(self, token):
-        self.token = token
-
-    def request(self):
+    def request(self, user_token):
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
 
         headers = {
-            'Authorization': f'Bearer {self.token}',
+            'Authorization': f'Bearer {user_token}',
             'Content-Type': 'application/json'
         }
 
@@ -21,6 +19,8 @@ class APILogin:
 
             if not session_token:
                 raise ValueError("Nie udało się uzyskać tokenu sesji")
+
+            save_tokens(user_token, session_token)
 
             return session_token
         

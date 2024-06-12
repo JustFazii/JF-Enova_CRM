@@ -21,7 +21,7 @@ function createWindow() {
     icon: iconPath
   });
 
-  mainWindow.loadURL("http://localhost:8000/index.html");
+  mainWindow.loadURL("http://localhost:8000/M_Login.html");
   mainWindow.setBackgroundColor('#030303')
   mainWindow.webContents.openDevTools();
 

@@ -622,7 +622,7 @@ tr .td-second {
   margin: 10px 15px 10px 0px;
   float: right;
   border-radius: 15px;
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 .input-group i {
@@ -636,18 +636,19 @@ tr .td-second {
   background-color: transparent;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 
 tbody tr.hide {
-  --delay: .1s;
+  --delay: 0.1s;
   opacity: 0;
-  transition: all .5s ease-in-out var(--delay);
+  transition: all 0.5s ease-in-out var(--delay);
   transform: translateX(100%);
 }
 
-tbody tr.hide td  {
+tbody tr.hide td {
   padding: 0;
   font: 0 / 0 sans-serif;
 }
@@ -656,7 +657,8 @@ thead th span.icon-arrow {
   font-size: 15px;
 }
 
-thead th.active, tbody td.active {
+thead th.active,
+tbody td.active {
   transition: all 0.3s;
   color: var(--table-active-color);
 }

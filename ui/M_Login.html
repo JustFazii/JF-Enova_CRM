@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="./styles/login.css" />
+  </head>
+  <body>
+    <div class="mainApp">
+      <div class="topBar">
+        <div class="titleBar">
+          <div class="title">Electron - Dashboard</div>
+        </div>
+        <div class="titleBarBtns">
+          <button id="minimizeBtn" class="topBtn minimizeBtn"></button>
+          <button id="maxResBtn" class="topBtn maximizeBtn"></button>
+          <button id="closeBtn" class="topBtn closeBtn"></button>
+        </div>
+      </div>
+    </div>
+    <div class="main-window">
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form action="#">
+            <h1>Customize your experience in app</h1>
+            <div class="infield">
+              <input type="text" placeholder="IP Address" id="ip"/>
+              <label></label>
+            </div>
+            <div class="infield">
+              <input type="text" placeholder="Port" id="port" />
+              <label></label>
+            </div>
+            <button class="lg-button">Save</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form action="#">
+            <h1>Sign in</h1>
+            <div class="infield">
+              <input type="password" placeholder="Token" id="sign-in-input" />
+              <label></label>
+            </div>
+            <button class="lg-button" id="sign-in-button">Sign In</button>
+          </form>
+        </div>
+        <div class="overlay-container" id="overlayCon">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome!</h1>
+              <p>
+                To be sure connection will work, you need to provide this
+                options.
+              </p>
+              <button class="lg-button">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Enova UI</h1>
+              <p>Enter your token to get access to UI build in Python</p>
+              <button class="lg-button">Settings</button>
+            </div>
+          </div>
+          <button class="lg-button" id="overlayBtn"></button>
+        </div>
+      </div>
+    </div>
+    <!-- Functions Site -->
+    <script src="./js/app/app-bar.js"></script>
+    <script src="./js/app/login.js"></script>
+    <!-- Functions API -->
+    <script src="./js/api/APILogin.js"></script>
+
+  </body>
+</html>

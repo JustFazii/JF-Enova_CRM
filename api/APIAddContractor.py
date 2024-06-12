@@ -1,30 +1,14 @@
 import requests
-from api.env_file import TOKEN_ENOVA, IP, PORT
+from app.env_file import IP, PORT, SESSION_TOKEN
 
 class APIAddContractor:
-    def __init__(self):
-        self.token = TOKEN_ENOVA
-
     def request(self, data):
-        login_url = f"http://{IP}:{PORT}/api/LoginApi"
         add_contractor_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/AddContractor"
 
-        headers = {
-            'Authorization': f'Bearer {self.token}',
-            'Content-Type': 'application/json'
-        }
-
         try:
-            response = requests.post(login_url, headers=headers)
-            response.raise_for_status()
-            login_data = response.json()
-            session_token = login_data.get('Token')
-
-            if not session_token:
-                raise ValueError("Unable to access Session Token.")
 
             service_headers = {
-                'Authorization': f'Bearer {session_token}',
+                'Authorization': f'Bearer {SESSION_TOKEN}',
                 'Content-Type': 'application/json'
             }
             kontrahent_data = {
@@ -44,7 +28,7 @@ class APIAddContractor:
                 "Miasto": data['Miasto'],
                 "Kraj": data['Kraj']
             }
-            print(kontrahent_data)
+            
             service_response = requests.post(add_contractor_url, headers=service_headers, json=kontrahent_data)
             service_response.raise_for_status()
             data = service_response.json()
