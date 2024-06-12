@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const textTimerElement = document.querySelector('.text-timer');
   
     let timerInterval;
-    const initialTime = 5 * 60; // 5 minutes in seconds
+    const initialTime = 5 * 60;
     let timeLeft = localStorage.getItem('timeLeft') ? parseInt(localStorage.getItem('timeLeft'), 10) : initialTime;
     let timerEnd = localStorage.getItem('timerEnd') ? parseInt(localStorage.getItem('timerEnd'), 10) : Date.now() + (timeLeft * 1000);
   
