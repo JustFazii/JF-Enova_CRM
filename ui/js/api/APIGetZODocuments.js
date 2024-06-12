@@ -1,6 +1,23 @@
-eel.expose(GetZODocuments);
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.location.pathname.endsWith("D_GetZODocuments.html")) {
+    eel.GetZODocuments()(function(data) {
+      GetZODocuments(data);
+    });
+  }
+});
+
 function GetZODocuments(data) {
+  console.log(data)
   document.getElementById("APIGetZODocuments").innerHTML = data;
+  const showPosButtons = document.querySelectorAll(".ShowPosButton");
+  showPosButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const documentId = this.value;
+      localStorage.setItem('documentId', documentId);
+      window.location.href = 'D_GetDocumentsPositionsZO.html';
+    });
+  });
+
   const search = document.querySelector(".input-group input"),
     table_rows = document.querySelectorAll("tbody tr"),
     table_headings = document.querySelectorAll("thead th");
@@ -73,11 +90,3 @@ function GetZODocuments(data) {
       );
   }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    if (window.location.pathname.endsWith("D_GetZODocuments.html")) {
-      eel.GetZODocuments()(function (data) {
-        GetZODocuments(data);
-    });
-  }
-});

@@ -41,7 +41,7 @@ class APIGetZODocuments:
                 f"<td class='{cls}'>{item['KontrahentID']}</td>"
                 f"<td class='{cls}'>{item['KontrahentNazwa']}</td>"
                 f"<td class='{cls}'>{item['WartoscBrutto']}</td>"
-                f"<td class='{cls}'><div class='Buttons'><Button class='ShowPosButton' value={item['ID']} title='Show documents positions'><i class='icon ph-bold ph-file-lock'></i></Button><Button class='ShowPosButton' value={item['ID']} title='Add relation with ZK document'><i class='icon ph-bold ph-folder-lock'></i></Button></div></td>"
+                f"<td class='{cls}'><div class='Buttons'><Button class='ShowPosButton' value={item['ID']} title='Show documents positions'><i class='icon ph-bold ph-file-lock'></i></Button><Button class='ShowRelationButton' value={item['ID']} title='Add relation with ZK document'><i class='icon ph-bold ph-folder-lock'></i></Button></div></td>"
                 f"</tr>"
             )
         html += "</table>"

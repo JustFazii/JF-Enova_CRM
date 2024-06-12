@@ -120,6 +120,7 @@ def GetZDDocuments():
 @eel.expose
 def GetDocumentsPositions(id):
     print("Called APIGetDocumentsPositions")
+    print(id)
     API = APIGetDocumentsPositions()
     result = API.request(id)
     print("Returning APIGetDocumentsPositions")

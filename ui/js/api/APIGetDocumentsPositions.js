@@ -1,17 +1,15 @@
-document.getElementById('submit-btn-p').addEventListener('click', function(event) {
-    console.log('Clicked button');
+document.getElementById('submit-btn-pos').addEventListener('click', function(event) {
     event.preventDefault();
     const input = document.getElementById('input-box-p').value;
-    console.log(input);
-    eel.show_handeldocspos({ value: input })(function(response) {
-        document.getElementById('output4').innerHTML = response;
+    eel.GetDocumentsPositions(input)(function(response) {
+        document.getElementById('APIGetDocumentsPositions').innerHTML = response;
         addTableFeatures();
     });
 });
 
-eel.expose(update_output4);
-function update_output4(data) {
-    document.getElementById('output4').innerHTML = data;
+eel.expose(GetDocumentsPositions);
+function GetDocumentsPositions(data) {
+    document.getElementById('APIGetDocumentsPositions').innerHTML = data;
     addTableFeatures();
 }
 

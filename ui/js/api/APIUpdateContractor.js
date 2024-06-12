@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
           document.querySelector("tbody").appendChild(sorted_row)
         );
     }
-    const buttons = document.querySelectorAll(".ShowPosButton");
+    const buttons = document.querySelectorAll(".ShowContractorButton");
     buttons.forEach(function (button) {
       button.addEventListener("click", function (event) {
         event.preventDefault();

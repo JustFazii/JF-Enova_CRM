@@ -9,11 +9,7 @@
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="./js/api/APIStatus.js"></script>
-    <script>
-      if (localStorage.getItem("theme") === "dark") {
-          document.documentElement.classList.add("dark-theme");
-      }
-  </script>  
+    <script type="text/javascript" src="./js/app/APPSetTheme.js"></script>
 </head>
 <body>
     <div class="mainApp">
@@ -223,5 +219,6 @@
   <script src="./js/app/APPAppBar.js"></script>
   <!-- Functions API -->
   <script src="./js/api/APIRefreshToken.js"></script>
+  <script src="./js/api/APIUpdateContractor.js"></script>
 
 </html>

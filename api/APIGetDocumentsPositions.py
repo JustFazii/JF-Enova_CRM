@@ -4,7 +4,7 @@ from app.APPGetToken import GetSessionToken
 
 class APIGetDocumentsPositions:
     def request(self, param):
-        document_position_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetDocumentsPositions?value={param['value']}"
+        document_position_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/GetDocumentsPositions?value={param}"
         session_token = GetSessionToken()
         
         try:
@@ -29,14 +29,15 @@ class APIGetDocumentsPositions:
             return f"Error: {ve}"
         
     def format_data(self, data):
-        html = "<table class='table-content'><thead><tr><th>Kod Towaru <span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Ilosc <span class='icon-arrow'>&uparrow;</span></th><th>Cena <span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
+        html = "<table class='table-content'><thead><tr><th>ID<span class='icon-arrow'>&uparrow;</span></th><th class='active asc'>Name<span class='icon-arrow'>&uparrow;</span></th><th>Value<span class='icon-arrow'>&uparrow;</span></th><th>Quantity<span class='icon-arrow'>&uparrow;</span></th></tr></thead>"
         for index, item in enumerate(data):
             cls = 'td-first' if index % 2 == 0 else 'td-second'
             html += (
                 f"<tr>"
-                f"<td class='{cls}'>{item['KodTowaru']}</td>"
-                f"<td class='{cls} active'>{item['Ilosc']}</td>"
-                f"<td class='{cls}'>{item['Cena']}</td>"
+                f"<td class='{cls}'>{item['TowarID']}</td>"
+                f"<td class='{cls} active'>{item['NazwaTowaru']}</td>"
+                f"<td class='{cls}'>{item['WartoscBrutto']}</td>"
+                f"<td class='{cls}'>{item['Ilosc']} {item['Jednostka']}</td>"
                 f"</tr>"
             )
         html += "</table>"

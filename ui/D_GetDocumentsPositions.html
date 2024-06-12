@@ -9,11 +9,7 @@
     <title>Enova365 UI - WebApp created in Python</title>
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="./js/api/APIStatus.js"></script>
-    <script>
-      if (localStorage.getItem("theme") === "dark") {
-          document.documentElement.classList.add("dark-theme");
-      }
-  </script>
+    <script type="text/javascript" src="./js/app/APPSetTheme.js"></script>
   </head>
   <body>
     <div class="mainApp">
@@ -160,10 +156,14 @@
         </div>
       </div>
       <div class="main-window">
-        <div class="navbar-ac">
+        <div class="navbar">
           <a href="D_GetZDDocuments.html">
-            <i class="icon ph-bold ph-caret-left"></i>
-            <span class="text">Go Back</span>
+            <i class="icon ph-bold ph-user-plus"></i>
+            <span class="text">ZD Documents</span>
+          </a>
+          <a href="D_GetZODocuments.html">
+            <i class="icon ph-bold ph-user-plus"></i>
+            <span class="text">ZO Documents</span>
           </a>
         </div>
         <div class="main-window-content-contractors">
@@ -181,12 +181,12 @@
           <div class="get-echo-box">
             <input class="input-box" id="input-box-p" type="text" placeholder="Enter text to send to API..."
             />
-            <a href="#" class="submit-btn" id="submit-btn-p">
+            <a href="#" class="submit-btn" id="submit-btn-pos">
               <span>Send</span>
             </a>
           </div>
           <div class="main-table">
-            <div id="output4"></div>
+            <div id="APIGetDocumentsPositions"></div>
           </div>
         </div>
       </div>
@@ -205,4 +205,5 @@
   <script src="./js/app/APPAppBar.js"></script>
   <!-- Functions API -->
   <script src="./js/api/APIRefreshToken.js"></script>
+  <script src="./js/api/APIGetDocumentsPositions.js"></script>
 </html>

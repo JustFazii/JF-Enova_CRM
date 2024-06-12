@@ -1,7 +1,23 @@
-eel.expose(GetZDDocuments);
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.location.pathname.endsWith("D_GetZDDocuments.html")) {
+    eel.GetZDDocuments()(function(data) {
+      GetZDDocuments(data);
+    });
+  }
+});
+
 function GetZDDocuments(data) {
-    console.log(data)
+  console.log(data)
   document.getElementById("APIGetZDDocuments").innerHTML = data;
+  const showPosButtons = document.querySelectorAll(".ShowPosButton");
+  showPosButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const documentId = this.value;
+      localStorage.setItem('documentId', documentId);
+      window.location.href = 'D_GetDocumentsPositionsZD.html';
+    });
+  });
+
   const search = document.querySelector(".input-group input"),
     table_rows = document.querySelectorAll("tbody tr"),
     table_headings = document.querySelectorAll("thead th");
@@ -74,11 +90,3 @@ function GetZDDocuments(data) {
       );
   }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    if (window.location.pathname.endsWith("D_GetZDDocuments.html")) {
-      eel.GetZDDocuments()(function (data) {
-        GetZDDocuments(data);
-    });
-  }
-});

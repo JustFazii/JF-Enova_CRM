@@ -39,7 +39,7 @@ class APIGetContractors:
                 f"<td class='{cls}'>{item['Nazwa']}</td>"
                 f"<td class='{cls}'>{item['NIP']}</td>"
                 f"<td class='{cls}'>{item['Adres']}</td>"
-                f"<td class='{cls}'><div class='Buttons'><button class='ShowPosButton' value={item['ID']} title='Show documents positions'><i class='icon ph-bold ph-user-gear'></i></button></div></td>"
+                f"<td class='{cls}'><div class='Buttons'><button class='ShowContractorButton' value={item['ID']} title='Show documents positions'><i class='icon ph-bold ph-user-gear'></i></button></div></td>"
                 f"</tr>"
             )
         html += "</table>"
