@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function GetZODocuments(data) {
-  console.log(data)
   document.getElementById("APIGetZODocuments").innerHTML = data;
   const showPosButtons = document.querySelectorAll(".ShowPosButton");
   showPosButtons.forEach(button => {
@@ -15,6 +14,14 @@ function GetZODocuments(data) {
       const documentId = this.value;
       localStorage.setItem('documentId', documentId);
       window.location.href = 'D_GetDocumentsPositionsZO.html';
+    });
+  });
+
+  const showRelationButtons = document.querySelectorAll(".ShowRelationButton");
+  showRelationButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const documentId = this.value;
+      showRelation(documentId);
     });
   });
 
@@ -89,4 +96,28 @@ function GetZODocuments(data) {
         document.querySelector("tbody").appendChild(sorted_row)
       );
   }
+}
+
+function showRelation(documentId) {
+  eel.CreateZOFVRelation(documentId)(function(result) {
+    let iconType = 'success';
+    let message = result;
+
+    if (result.includes("already exists")) {
+      iconType = 'error';
+      message = "The document already exists.";
+    }
+
+    if (result.includes("Error")) {
+      iconType = 'error';
+      message = "Refresh token";
+    }
+
+    Swal.fire({
+      title: 'Result',
+      text: message,
+      icon: iconType,
+      confirmButtonText: 'OK'
+    });
+  });
 }

@@ -3,8 +3,8 @@ from app.env_file import IP, PORT
 from app.APPGetToken import GetSessionToken
 
 class APICreateZOFVRelation:
-    def request(self, zofv):
-        zofv_relation_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/CreateZOFVRelation?idDokumentuZO={zofv['idDokumentuZO']}"
+    def request(self, id):
+        zofv_relation_url = f"http://{IP}:{PORT}/api/ServiceImpApiANS/CreateZOFVRelation?idDokumentuZO={id}"
         session_token = GetSessionToken()
 
         try:
