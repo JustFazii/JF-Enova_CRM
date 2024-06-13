@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   if (window.location.pathname.endsWith("D_GetDocumentsPositionsZO.html")) {
-    const documentId = localStorage.getItem('documentId'); // Pobieranie właściwej wartości z localStorage
+    const documentId = localStorage.getItem('documentId');
     if (documentId) {
       eel.GetDocumentsPositions(documentId)(function(response) {
         document.getElementById("APIGetDocumentsPositionsZO").innerHTML = response;

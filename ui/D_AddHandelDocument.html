@@ -16,7 +16,7 @@
       <div class="topBar">
         <div class="titleBar">
           <div class="title">
-            Electron - Invoices
+            Electron - Add Handel Document
           </div>
         </div>
         <div class="titleBarBtns">
@@ -163,46 +163,55 @@
       </div>
       <div class="main-window">
         <div class="navbar-get-echo">
-            <a href="#" class="not-available">
-              <i class="icon ph-bold ph-x"></i>
-              <span class="text">No options available</span>
-            </a>
-          </div>
+          <a href="#" class="not-available">
+            <i class="icon ph-bold ph-x"></i>
+            <span class="text">No options available</span>
+          </a>
+        </div>
         <div class="main-window-content-contractors">
           <div class="func-name">
-            <i class="icon ph-bold ph-folder-lock"></i>
-            <span>Invoices</span>
+            <i class="icon ph-bold ph-file-plus"></i>
+            <span>Add Handel Document</span>
           </div>
           <div class="func-description">
             <p>
-              This service is used to manage all available contractors in
-              database. Here you will have all available contractors.<br />
-              You can edit their data or add a new one.
+              This service is used to add new Handel Document.
             </p>
           </div>
-          <div class="input-group">
-            <input class="input-box-group" type="search" placeholder="Search data in table...">
-            <i class="ph ph-magnifying-glass"></i>
-          </div>
           <div class="main-table">
-            <div id="APIGetInvoices"></div>
+            <div class="add-cont-box">
+              <div class="add-cont-box-o">
+              <input class="add-input-box" id="code" type="text" placeholder="Kod"/>
+              </div>
+              <div class="add-cont-box-s">
+              <input class="add-input-box" id="vatod" type="text" placeholder="Vat Od"/>
+              <input class="add-input-box" id="ulica" type="text" placeholder="Ulica"/>
+              <input class="add-input-box" id="nrdomu" type="text" placeholder="Nr. Domu"/>
+              <input class="add-input-box" id="kodpoczt" type="text" placeholder="Kod Pocztowy"/>
+              <input class="add-input-box" id="poczta" type="text" placeholder="Poczta"/>
+              <input class="add-input-box" id="woj" type="text" placeholder="Wojewódźtwo"/>
+              <input class="add-input-box" id="miasto" type="text" placeholder="Miasto"/>
+              <input class="add-input-box" id="kraj" type="text" placeholder="kraj"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!--Jquery-->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-      crossorigin="anonymous"
-    ></script>
   </body>
+  <!--Jquery-->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"
+  ></script>
+
   <!-- Functions APP -->
   <script src="./js/app/APPSideMenu.js"></script>
   <script src="./js/app/APPTheme.js"></script>
   <script src="./js/app/APPAppBar.js"></script>
+  <script src="./js/app/APPAddHandelDocument.js"></script>
   <!-- Functions API -->
   <script src="./js/api/APIRefreshToken.js"></script>
-  <script src="./js/api/APIGetInvoices.js"></script>
+
 </html>
