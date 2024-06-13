@@ -7,6 +7,7 @@ from api.APILogin import APILogin
 from api.APILogout import APILogout
 from api.APIStatus import APIStatus
 from api.APIGetContractors import APIGetContractors
+from api.APIGetContractorsDokHan import APIGetContractorsDokHan
 from api.APIGetContractorByID import APIGetContractorByID
 from api.APIAddContractor import APIAddContractor
 from api.APIUpdateContractor import APIUpdateContractor
@@ -18,7 +19,10 @@ from api.APICreateZDZKRelation import APICreateZDZKRelation
 from api.APIGenerateInvoiceFV import APIGenerateInvoiceFV
 from api.APIGenerateInvoiceZK import APIGenerateInvoiceZK
 from api.APIGetGoods import APIGetGoods
+from api.APIGetGoodsDocHan import APIGetGoodsDocHan
+from api.APIGetGoodsByID import APIGetGoodsByID
 from api.APIGetInvoices import APIGetInvoices
+from api.APIAddHandelDocument import APIAddHandelDocument
 from api.APIPassEcho import APIPassEcho
 
 @eel.expose
@@ -75,6 +79,14 @@ def GetContractors():
     API = APIGetContractors()
     result = API.request()
     print("Returning APIGetContractors")
+    return result
+
+@eel.expose
+def GetContractorsDokHan():
+    print("Called APIGetContractorsDokHan")
+    API = APIGetContractorsDokHan()
+    result = API.request()
+    print("Returning APIGetContractorsDokHan")
     return result
 
 @eel.expose
@@ -167,11 +179,35 @@ def GetGoods():
     return result
 
 @eel.expose
+def GetGoodsDocHan():
+    print("Called APIGetGoodsDokHan")
+    API = APIGetGoodsDocHan()
+    result = API.request()
+    print("Returning APIGetGoodsDokHan")
+    return result
+
+@eel.expose
+def GetGoodsByID(id):
+    print("Called APIGetGoodsByID")
+    API = APIGetGoodsByID()
+    result = API.request(id)
+    print("Returning APIGetGoodsByID")
+    return result
+
+@eel.expose
 def GetInvoices():
     print("Called APIGetInvoices")
     API = APIGetInvoices()
     result = API.request()
     print("Returning APIGetInvoices")
+    return result
+
+@eel.expose
+def AddHandelDocument(data):
+    print("Called APIAddHandelDocument")
+    API = APIAddHandelDocument()
+    result = API.request(data)
+    print("Returning APIAddHandelDocument")
     return result
 
 @eel.expose

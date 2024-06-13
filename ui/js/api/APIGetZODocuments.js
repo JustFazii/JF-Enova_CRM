@@ -113,6 +113,11 @@ function showRelation(documentId) {
       message = "Refresh token";
     }
 
+    if (result.includes("zatwierdzać")) {
+      iconType = 'error';
+      message = "Canceled document";
+    }
+
     Swal.fire({
       title: 'Result',
       text: message,

@@ -1,6 +1,6 @@
 eel.expose(GetGoods);
 function GetGoods(data) {
-  document.getElementById("output3").innerHTML = data;
+  document.getElementById("APIGetGoods").innerHTML = data;
   const search = document.querySelector(".input-group input"),
     table_rows = document.querySelectorAll("tbody tr"),
     table_headings = document.querySelectorAll("thead th");
