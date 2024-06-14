@@ -10,6 +10,8 @@
   --linear-grad: linear-gradient(to right, #141E30, #243B55);
   --grad-clr1: #141E30;
   --grad-clr2: #243B55;
+  --background: #fff
+  --main-window: #fff
 }
 
 .mainApp {
@@ -113,7 +115,7 @@
 
 .main-window {
   height: calc(100vh - 30px);
-  background: #f6f5f7;
+  background: var(--background-color);
   display: grid;
   place-content: center;
   font-family: 'Poppins', sans-serif;
@@ -123,7 +125,7 @@
   position: relative;
   width: 850px;
   height: 500px;
-  background-color: #FFF;
+  background-color: var(--main-window);
   box-shadow: 25px 30px 55px #5557;
   border-radius: 13px;
   overflow: hidden;
