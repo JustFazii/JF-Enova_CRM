@@ -1,12 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
 :root {
-  --primary-color: #fff;
+  --primary-color: #fafafa;
   --secondary-color: #f6f6f6;
-  --background-color: #5b6677;
+  --background-color: #000000;
   --text-color: #5b6677;
   --text-color2: #000;
   --text-color3: #fff;
+  --text-color4: #000;
   --text-hover-color: #000;
   --button-color: #757575;
   --table-first-color: #dddddd;
@@ -17,17 +18,18 @@
 
 .dark-theme {
   --primary-color: #121212;
-  --secondary-color: #454545;
+  --secondary-color: #020202;
   --background-color: #000000;
   --text-color: #a7a7a7;
   --text-color2: #9b9b9b;
   --text-color3: #ffffff;
+  --text-color4: #ffffff;
   --text-hover-color: #000000;
   --button-color: #757575;
   --table-first-color: #8f8f8f;
   --table-second-color: #696969;
   --table-hover-color: #808080;
-  --table-active-color: greenyellow;
+  --table-active-color: #243BFF;
 }
 
 * {
@@ -232,7 +234,7 @@ body {
 
 .menu ul li > a:hover,
 .menu ul li.active > a {
-  color: var(--text-color3);
+  color: var(--text-color4);
   background-color: var(--primary-color);
 }
 
@@ -682,7 +684,6 @@ input:focus {
 
 tbody tr.hide {
   --delay: 0.1s;
-  opacity: 0;
   transition: all 0.5s ease-in-out var(--delay);
   transform: translateX(100%);
 }
@@ -690,6 +691,27 @@ tbody tr.hide {
 tbody tr.hide td {
   padding: 0;
   font: 0 / 0 sans-serif;
+}
+
+tbody tr.hide button{
+  width: 0;
+  height: 0;
+  font: 0 / 0 sans-serif;
+  display: none;
+}
+
+tbody tr.hide button i{
+  width: 0;
+  height: 0;
+  font: 0 / 0 sans-serif;
+  display: none;
+}
+
+tbody tr.hide .ShowContractorButton:hover {
+  width: 0;
+  height: 0;
+  font: 0 / 0 sans-serif;
+  display: none;
 }
 
 thead th span.icon-arrow {
@@ -868,15 +890,15 @@ thead th.asc span.icon-arrow {
   display: flex;
   gap: 10px;
   width: 100px;
-  background-color: var(--secondary-color);
-  border: 1px solid black;
+  background-color: var(--button-color);
+  border: 1px solid var(--text-color);
   border-radius: 15px;
   padding: 7px 40px 7px 40px;
   text-align: center;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text-color3);
   transition: all 0.3s;
   font-weight: 500;
   text-transform: uppercase;
@@ -997,7 +1019,6 @@ thead th.asc span.icon-arrow {
   width: 25px;
   height: 25px;
   border-radius: 25%;
-  background-color: var(--button-color);
 }
 
 .ShowContractorButton:hover {
@@ -1011,7 +1032,6 @@ thead th.asc span.icon-arrow {
   width: 25px;
   height: 25px;
   border-radius: 25%;
-  background-color: var(--button-color);
 }
 
 .ShowRelationButton:hover {
@@ -1022,7 +1042,6 @@ thead th.asc span.icon-arrow {
   width: 25px;
   height: 25px;
   border-radius: 25%;
-  background-color: var(--button-color);
 }
 
 .AddContractorToHandel:hover {
@@ -1033,7 +1052,6 @@ thead th.asc span.icon-arrow {
   width: 25px;
   height: 25px;
   border-radius: 25%;
-  background-color: var(--button-color);
 }
 
 .ShowPosButton:hover {
@@ -1044,7 +1062,6 @@ thead th.asc span.icon-arrow {
   width: 25px;
   height: 25px;
   border-radius: 25%;
-  background-color: var(--button-color);
 }
 
 .AddGoodsToHandel:hover {
@@ -1058,4 +1075,151 @@ thead th.asc span.icon-arrow {
   align-content: center;
   justify-content: center;
   gap: 10px;
+}
+
+/* AddHandelDocument CSS */
+
+.add-doc-main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.add-doc-main span {
+  color: var(--text-color);
+}
+
+.add-doc-main select {
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  color: var(--text-color);
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.contractor-name {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.contractor-name span {
+  color: var(--text-color);
+}
+
+.goods-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  margin-top: 30px;
+}
+
+.add-doc-goods {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.add-doc-goods-btn {
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  border: none;
+  border: solid 1px white;
+  border-radius: 5px;
+}
+
+.add-doc-goods-btn i {
+  text-align: center;
+  color: white;
+}
+
+.remove-goods-btn {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  border: solid 1px var(--text-color);
+  border-radius: 5px;
+}
+
+.remove-goods-btn i {
+  text-align: center;
+  color: var(--text-color4);
+}
+
+.fetch-goods-btn {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  border: solid 1px var(--text-color);
+  border-radius: 5px;
+}
+
+.fetch-goods-btn i {
+  text-align: center;
+  color: var(--text-color4);
+}
+
+.goods-add-line {
+  display: flex;
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center
+}
+
+.goods-add-line button {
+  background: transparent;
+  border: none;
+  border: 1px solid var(--table-hover-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  padding: 5px;
+}
+
+.goods-submit {
+  display: flex;
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center
+}
+
+.goods-submit button {
+  background: transparent;
+  border: none;
+  border: 1px solid var(--table-hover-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  padding: 5px;
+}
+
+.goods-contractor {
+  gap: 5px;
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center
+}
+
+.goods-contractor button {
+  background: transparent;
+  border: none;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  padding: 5px;
 }

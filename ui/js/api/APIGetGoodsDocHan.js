@@ -77,29 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
                       document.querySelector("tbody").appendChild(sorted_row)
                   );
           }
-
-          document.querySelectorAll('.AddGoodsToHandel').forEach(button => {
-              button.addEventListener('click', function() {
-                  const goodsId = this.value;
-                  console.log('Fetching goods by ID:', goodsId); // Debugging log
-                  eel.GetGoodsByID(goodsId)(function(response) {
-                      if (response) {
-                          console.log('Retrieved goods data:', response); // Debugging log
-                          const good = response[0];
-                          const currentGoodsLineIndex = localStorage.getItem('currentGoodsLineIndex');
-                          console.log('Current goods line index:', currentGoodsLineIndex); // Debugging log
-                          localStorage.setItem('selectedGoods', JSON.stringify({
-                              index: currentGoodsLineIndex,
-                              KodTowaru: good.Kod,
-                              Cena: good.Cena,
-                              Ilosc: good.IloscDostepna
-                          }));
-                          localStorage.removeItem('currentGoodsLineIndex');
-                          window.location.href = 'D_AddHandelDocument.html';
-                      }
-                  });
-              });
-          });
       }
   }
 });
