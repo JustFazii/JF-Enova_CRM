@@ -8,8 +8,6 @@ class APILogin:
         IP = GetSettingsIP()
         PORT = GetSettingsPort()
         
-        print(IP, PORT)
-        
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
 
         headers = {

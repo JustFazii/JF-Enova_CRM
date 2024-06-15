@@ -1,11 +1,11 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
-const path = require('path');
-const eel = require('eel');
+const { app, BrowserWindow, ipcMain } = require("electron");
+const path = require("path");
 
 let mainWindow;
 
 function createWindow() {
-  const iconPath = 'C:/Users/JustFazii/Desktop/JF-Enova_Electron/ui/img/enova-logo.ico';
+  const iconPath =
+    "C:/Users/JustFazii/Desktop/JF-Enova_Electron/ui/img/enova-logo.ico";
 
   mainWindow = new BrowserWindow({
     width: 1000,
@@ -14,28 +14,27 @@ function createWindow() {
     minHeight: 950,
     frame: false,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
       contextIsolation: true,
-      devTools: true
+      devTools: true,
     },
-    icon: iconPath
+    icon: iconPath,
   });
 
   mainWindow.loadURL("http://localhost:8000/M_Login.html");
-  mainWindow.setBackgroundColor('#030303')
-  mainWindow.webContents.openDevTools();
+  mainWindow.setBackgroundColor("#030303");
 
-  mainWindow.on('closed', function () {
+  mainWindow.on("closed", function () {
     mainWindow = null;
   });
 
-  mainWindow.on('maximize', () => {
-    mainWindow.webContents.send('isMaximized');
+  mainWindow.on("maximize", () => {
+    mainWindow.webContents.send("isMaximized");
   });
 
-  mainWindow.on('unmaximize', () => {
-    mainWindow.webContents.send('isRestored');
+  mainWindow.on("unmaximize", () => {
+    mainWindow.webContents.send("isRestored");
   });
 }
 
@@ -49,11 +48,11 @@ app.on("activate", function () {
   if (mainWindow === null) createWindow();
 });
 
-ipcMain.on('minimizeApp', () => {
+ipcMain.on("minimizeApp", () => {
   mainWindow.minimize();
 });
 
-ipcMain.on('maximizeApp', () => {
+ipcMain.on("maximizeApp", () => {
   if (mainWindow.isMaximized()) {
     mainWindow.restore();
   } else {
@@ -61,6 +60,6 @@ ipcMain.on('maximizeApp', () => {
   }
 });
 
-ipcMain.on('closeApp', () => {
+ipcMain.on("closeApp", () => {
   mainWindow.close();
 });

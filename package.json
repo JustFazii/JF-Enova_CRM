@@ -1,14 +1,35 @@
 {
-  "name": "jf-enova-electron",
-  "version": "1.0.0",
+  "name": "JF-EnovaUI",
+  "version": "2.0.0",
   "description": "JustFazii - Enova-Electron App",
   "main": "./electron/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "author": "JustFazii",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^7.2.4"
+    "electron": "^7.2.4",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.justfazii.enova",
+    "win": {
+      "target": "nsis",
+      "icon": "./ui/img/enova-logo.ico"
+    },
+    "files": [
+      "./dist/**/*",
+      "./electron/**/*",
+      "./ui/**/*",
+      "./api/**/*",
+      "./app/**/*",
+      "main.py",
+      "requirements.txt"
+    ],
+    "directories": {
+      "buildResources": "./ui/img"
+    }
   }
 }
