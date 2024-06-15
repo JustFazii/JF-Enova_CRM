@@ -1,11 +1,15 @@
 import requests
 from app.APPSaveToken import SaveTokens
-from app import APPGetSettingsIP, APPGetSettingsPort
+from app.APPGetSettingsPort import GetSettingsPort
+from app.APPGetSettingsIP import GetSettingsIP
 
 class APILogin:
     def request(self, user_token):
-        IP = APPGetSettingsIP
-        PORT = APPGetSettingsPort
+        IP = GetSettingsIP()
+        PORT = GetSettingsPort()
+        
+        print(IP, PORT)
+        
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
 
         headers = {
