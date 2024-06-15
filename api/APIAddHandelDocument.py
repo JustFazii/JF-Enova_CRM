@@ -29,5 +29,4 @@ class APIAddHandelDocument:
             return response.json()
         
         except requests.exceptions.RequestException as e:
-            print(f"Error when connecting with API: {e}")
             return f"Error while communicating with API: {e}"

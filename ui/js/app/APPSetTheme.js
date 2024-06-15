@@ -1,3 +1,3 @@
 if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark-theme");
-  }
+  document.documentElement.classList.add("dark-theme");
+}

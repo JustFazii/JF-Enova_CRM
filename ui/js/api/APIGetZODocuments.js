@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname.endsWith("D_GetZODocuments.html")) {
-    eel.GetZODocuments()(function(data) {
+    eel.GetZODocuments()(function (data) {
       GetZODocuments(data);
     });
   }
@@ -9,17 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
 function GetZODocuments(data) {
   document.getElementById("APIGetZODocuments").innerHTML = data;
   const showPosButtons = document.querySelectorAll(".ShowPosButton");
-  showPosButtons.forEach(button => {
-    button.addEventListener('click', function() {
+  showPosButtons.forEach((button) => {
+    button.addEventListener("click", function () {
       const documentId = this.value;
-      localStorage.setItem('documentId', documentId);
-      window.location.href = 'D_GetDocumentsPositionsZO.html';
+      localStorage.setItem("documentId", documentId);
+      window.location.href = "D_GetDocumentsPositionsZO.html";
     });
   });
 
   const showRelationButtons = document.querySelectorAll(".ShowRelationButton");
-  showRelationButtons.forEach(button => {
-    button.addEventListener('click', function() {
+  showRelationButtons.forEach((button) => {
+    button.addEventListener("click", function () {
       const documentId = this.value;
       showRelation(documentId);
     });
@@ -99,30 +99,30 @@ function GetZODocuments(data) {
 }
 
 function showRelation(documentId) {
-  eel.CreateZOFVRelation(documentId)(function(result) {
-    let iconType = 'success';
+  eel.CreateZOFVRelation(documentId)(function (result) {
+    let iconType = "success";
     let message = result;
 
     if (result.includes("already exists")) {
-      iconType = 'error';
+      iconType = "error";
       message = "The document already exists.";
     }
 
     if (result.includes("Error")) {
-      iconType = 'error';
+      iconType = "error";
       message = "Refresh token";
     }
 
     if (result.includes("zatwierdzać")) {
-      iconType = 'error';
+      iconType = "error";
       message = "Canceled document";
     }
 
     Swal.fire({
-      title: 'Result',
+      title: "Result",
       text: message,
       icon: iconType,
-      confirmButtonText: 'OK'
+      confirmButtonText: "OK",
     });
   });
 }

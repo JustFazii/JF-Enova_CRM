@@ -75,10 +75,9 @@ function GetInvoices(data) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (window.location.pathname.endsWith("D_GetInvoices.html")) {
-      eel.GetInvoices()(function (data) {
-        GetInvoices(data);
+  if (window.location.pathname.endsWith("D_GetInvoices.html")) {
+    eel.GetInvoices()(function (data) {
+      GetInvoices(data);
     });
   }
 });
-  

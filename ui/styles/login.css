@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   padding: 0px;
@@ -7,9 +7,9 @@
 }
 
 :root {
-  --linear-grad: linear-gradient(to right, #141E30, #243B55);
-  --grad-clr1: #141E30;
-  --grad-clr2: #243B55;
+  --linear-grad: linear-gradient(to right, #141e30, #243b55);
+  --grad-clr1: #141e30;
+  --grad-clr2: #243b55;
 }
 
 .mainApp {
@@ -22,7 +22,7 @@
   -webkit-box-sizing: border-box;
 }
 
-.mainApp>.topBar {
+.mainApp > .topBar {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -32,13 +32,13 @@
   -webkit-user-select: none;
 }
 
-.topBar>.titleBar {
+.topBar > .titleBar {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.topBar>.titleBar {
+.topBar > .titleBar {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -46,11 +46,11 @@
   width: 100%;
 }
 
-.titleBar>.toggleButton:active {
+.titleBar > .toggleButton:active {
   background-color: #4f9fee;
 }
 
-.titleBar>.title {
+.titleBar > .title {
   margin-left: 10px;
   width: 100%;
   line-height: 30px;
@@ -61,13 +61,13 @@
   font-size: 10px;
 }
 
-.topBar>.titleBarBtns {
+.topBar > .titleBarBtns {
   display: flex;
   flex-direction: row;
   height: 100%;
 }
 
-.titleBarBtns>.topBtn {
+.titleBarBtns > .topBtn {
   width: 30px;
   height: 30px;
   border: none;
@@ -79,35 +79,35 @@
   cursor: pointer;
 }
 
-.titleBarBtns>.topBtn:hover {
+.titleBarBtns > .topBtn:hover {
   background-color: #272c36;
 }
 
-.titleBarBtns>.topBtn:active {
+.titleBarBtns > .topBtn:active {
   background-color: var(--button-color);
 }
 
-.titleBarBtns>.minimizeBtn {
+.titleBarBtns > .minimizeBtn {
   background-size: 10px;
   background-image: url(../img/icon_minimize.png);
 }
 
-.titleBarBtns>.maximizeBtn {
+.titleBarBtns > .maximizeBtn {
   background-size: 10px;
   background-image: url(../img/icon_maximize.png);
 }
 
-.titleBarBtns>.restoreBtn {
+.titleBarBtns > .restoreBtn {
   background-size: 10px;
   background-image: url(../img/icon_restore.png);
 }
 
-.titleBarBtns>.closeBtn {
+.titleBarBtns > .closeBtn {
   background-size: 10px;
   background-image: url(../img/icon_close.png);
 }
 
-.titleBarBtns>.closeBtn:hover {
+.titleBarBtns > .closeBtn:hover {
   background-color: red;
 }
 
@@ -116,14 +116,14 @@
   background: #f6f5f7;
   display: grid;
   place-content: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
   position: relative;
   width: 850px;
   height: 500px;
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 25px 30px 55px #5557;
   border-radius: 13px;
   overflow: hidden;
@@ -175,7 +175,7 @@ label {
   transition: 0.3s;
 }
 
-input:focus~label {
+input:focus ~ label {
   width: 100%;
 }
 
@@ -188,14 +188,14 @@ a {
 
 a.forgot {
   padding-bottom: 3px;
-  border-bottom: 2px solid #EEE;
+  border-bottom: 2px solid #eee;
 }
 
 .lg-button {
   border-radius: 20px;
   border: 1px solid var(--grad-clr1);
   background: var(--grad-clr2);
-  color: #FFF;
+  color: #fff;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
@@ -221,7 +221,7 @@ h1 {
 }
 
 .social-container a {
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;
@@ -237,7 +237,7 @@ h1 {
 }
 
 .form-container .lg-button:hover {
-  background: #FFF;
+  background: #fff;
   color: var(--grad-clr1);
 }
 
@@ -260,7 +260,7 @@ h1 {
   transform: translateX(-50%);
   width: 143.67px;
   height: 40px;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
   background: transparent;
   border-radius: 20px;
 }
@@ -268,7 +268,7 @@ h1 {
 .overlay {
   position: relative;
   background: var(--linear-grad);
-  color: #FFF;
+  color: #fff;
   left: -150%;
   height: 100%;
   width: 250%;
@@ -299,7 +299,7 @@ h1 {
 }
 
 .overlay-panel h1 {
-  color: #FFF;
+  color: #fff;
 }
 
 p {
@@ -344,7 +344,6 @@ p {
 }
 
 @keyframes show {
-
   0%,
   50% {
     opacity: 0;

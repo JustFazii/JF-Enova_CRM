@@ -14,11 +14,11 @@ $(".menu-btn").click(function () {
 const logoutBtn = document.getElementById("logoutBtn");
 
 logoutBtn.addEventListener("click", () => {
-  eel.Logout()(function(result) {
-    if (result && typeof result === 'string' && result.startsWith('Error')) {
-      alert('Logout failed: ' + result);
+  eel.Logout()(function (result) {
+    if (result && typeof result === "string" && result.startsWith("Error")) {
+      alert("Logout failed: " + result);
     } else {
-      window.location.href = 'M_Login.html';
+      window.location.href = "M_Login.html";
     }
   });
 });

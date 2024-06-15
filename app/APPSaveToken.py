@@ -1,4 +1,3 @@
-# utils.py
 import re
 
 def SaveTokens(user_token, session_token):

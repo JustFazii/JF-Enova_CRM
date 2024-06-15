@@ -29,7 +29,7 @@
   --table-first-color: #8f8f8f;
   --table-second-color: #696969;
   --table-hover-color: #808080;
-  --table-active-color: #243BFF;
+  --table-active-color: #243bff;
 }
 
 * {
@@ -693,14 +693,14 @@ tbody tr.hide td {
   font: 0 / 0 sans-serif;
 }
 
-tbody tr.hide button{
+tbody tr.hide button {
   width: 0;
   height: 0;
   font: 0 / 0 sans-serif;
   display: none;
 }
 
-tbody tr.hide button i{
+tbody tr.hide button i {
   width: 0;
   height: 0;
   font: 0 / 0 sans-serif;
@@ -1180,7 +1180,7 @@ thead th.asc span.icon-arrow {
   display: flex;
   margin-top: 10px;
   text-align: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .goods-add-line button {
@@ -1196,7 +1196,7 @@ thead th.asc span.icon-arrow {
   display: flex;
   margin-top: 10px;
   text-align: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .goods-submit button {
@@ -1212,7 +1212,7 @@ thead th.asc span.icon-arrow {
   gap: 5px;
   margin-top: 10px;
   text-align: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .goods-contractor button {

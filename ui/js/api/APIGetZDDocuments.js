@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname.endsWith("D_GetZDDocuments.html")) {
-    eel.GetZDDocuments()(function(data) {
+    eel.GetZDDocuments()(function (data) {
       GetZDDocuments(data);
     });
   }
@@ -10,17 +10,17 @@ function GetZDDocuments(data) {
   document.getElementById("APIGetZDDocuments").innerHTML = data;
 
   const showPosButtons = document.querySelectorAll(".ShowPosButton");
-  showPosButtons.forEach(button => {
-    button.addEventListener('click', function() {
+  showPosButtons.forEach((button) => {
+    button.addEventListener("click", function () {
       const documentId = this.value;
-      localStorage.setItem('documentId', documentId);
-      window.location.href = 'D_GetDocumentsPositionsZD.html';
+      localStorage.setItem("documentId", documentId);
+      window.location.href = "D_GetDocumentsPositionsZD.html";
     });
   });
 
   const showRelationButtons = document.querySelectorAll(".ShowRelationButton");
-  showRelationButtons.forEach(button => {
-    button.addEventListener('click', function() {
+  showRelationButtons.forEach((button) => {
+    button.addEventListener("click", function () {
       const documentId = this.value;
       showRelation(documentId);
     });
@@ -100,30 +100,30 @@ function GetZDDocuments(data) {
 }
 
 function showRelation(documentId) {
-  eel.CreateZDZKRelation(documentId)(function(result) {
-    let iconType = 'success';
+  eel.CreateZDZKRelation(documentId)(function (result) {
+    let iconType = "success";
     let message = result;
 
     if (result.includes("already exists")) {
-      iconType = 'error';
+      iconType = "error";
       message = "The document already exists.";
     }
 
     if (result.includes("Error")) {
-      iconType = 'error';
+      iconType = "error";
       message = "Refresh token";
     }
 
     if (result.includes("zatwierdzać")) {
-      iconType = 'error';
+      iconType = "error";
       message = "Canceled document";
     }
 
     Swal.fire({
-      title: 'Result',
+      title: "Result",
       text: message,
       icon: iconType,
-      confirmButtonText: 'OK'
+      confirmButtonText: "OK",
     });
   });
 }

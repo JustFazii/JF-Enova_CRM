@@ -11,6 +11,7 @@
   <script type="text/javascript" src="./js/api/APIStatus.js"></script>
   <script type="text/javascript" src="./js/app/APPSetTheme.js"></script>
   <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/api/APIEventBus.js"></script>
 </head>
 <body>
@@ -199,11 +200,11 @@
             <span>Goods in document:</span>
             </div>
             <div class="goods-line">
-              <div class="add-doc-goods" id="1">
+              <div class="add-doc-goods" data-row-id="row-1">
                 <input class="add-input-box goods-code" type="text" placeholder="Goods Code"/>
                 <input class="add-input-box goods-quantity" type="text" placeholder="Quantity"/>
                 <input class="add-input-box goods-price" type="text" placeholder="Price"/>
-                <button class='fetch-goods-btn' id="1"><i class='icon ph-bold ph-magnifying-glass'></i></button>
+                <button class='fetch-goods-btn'><i class='icon ph-bold ph-magnifying-glass'></i></button>
                 <button class='remove-goods-btn'><i class='icon ph-bold ph-trash'></i></button>
               </div>
             </div>
