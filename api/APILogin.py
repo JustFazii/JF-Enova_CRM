@@ -1,9 +1,11 @@
 import requests
-from app.env_file import IP, PORT
 from app.APPSaveToken import SaveTokens
+from app import APPGetSettingsIP, APPGetSettingsPort
 
 class APILogin:
     def request(self, user_token):
+        IP = APPGetSettingsIP
+        PORT = APPGetSettingsPort
         login_url = f"http://{IP}:{PORT}/api/LoginApi"
 
         headers = {
